@@ -1,0 +1,97 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（2层绝对路径雷达精准校准，0%出错率）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== ✧ 🎬 第一幕：踏入大门！神秘魔法庭院星芒大拉开 =====================
+echo -e "${PURPLE}"
+echo '        .----------------------------------------------------. '
+echo '       /  \    ✧  ✧  ✧  MYSTERIOUS COURTYARD  ✧  ✧  ✧       /  \'
+echo '      /____\_______________________________________________/____\'
+echo '      |                                                        |'
+echo -e "      |  There is a great, echoing fountain situated right     |"
+echo -e "      |  in the cold center of this ancient courtyard...       |"
+echo '      |________________________________________________________|'
+echo -e "${NC}"
+
+echo "The waters are bright and clear in the brilliant, magical light"
+echo "emanating directly from your glowing eyes."
+echo ""
+echo -e "${PURPLE}----------------------------------------------------------------------${NC}"
+echo ""
+# 🌟 故事分屏交互锚点 1
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO INVENT THE COLD FOUNTAIN GATES...${NC}"
+read -s -r
+
+# ===================== ⛲ 🎬 第二幕：喷泉轰鸣！3D 水蓝石雕喷泉 与 荧光绿枯木交错具现 =====================
+clear
+# 🌟 核心升级：外围利用纯单引号神盾复印，内嵌水蓝色，右侧线条 100% 绝对垂直死齐！
+echo -e "${BLUE}"
+echo '                   \\\\\        ///                 '
+echo '                    \\\\\      ///                  '
+echo '                  ~~~~~~~~~~~~~~~~~~~~               '
+echo '                ~~~    ||||||||    ~~~               '
+echo '              ~~~      ||||||||      ~~~             '
+echo '             ~~~       ||||||||       ~~~            '
+echo '            ~~~     _______________    ~~~           '
+echo '           ~~~     /               \    ~~~          '
+echo '           ~~~    /   STONE BASIN   \    ~~~         '
+echo '            ~~~   \_______________/   ~~~            '
+echo '               ~~~~~~~~~~~~~~~~~~~~~~~~                '
+echo -e "${NC}"
+
+echo "There were once beautiful mystical plants growing all around here,"
+echo -e "but they are all ${RED}completely dead and gnarled${NC} now under the curse..."
+echo ""
+
+# 枯败扭曲草木图案（纯单引号免冲突清洗）
+echo -e "${GREEN}"
+echo '            \/     \ /    \/ '
+echo '            /\     /\     /\ '
+echo '           /  \   /  \   /  \'
+echo '          /____\ /____\ /____\'
+echo -e "${NC}"
+echo ""
+# 🌟 故事分屏交互锚点 2
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO PEER CLOSER INTO THE SHIMMERING BASIN...${NC}"
+read -s -r
+# ===================== 🐟 🎬 第三幕：深水游鱼！冰蓝波纹闪现 夹击 3D 魔法小鱼 =====================
+clear
+echo -e "${CYAN}"
+echo '          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '
+echo '         ~                                                    ~'
+echo -e "        ~   If you stand perfectly still here, you can hear   ~"
+echo -e "        ~   the soft, ${BLUE}enchanting rippling${CYAN} of hidden water...    ~"
+echo '         ~                                                    ~'
+echo '          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '
+echo -e "${NC}"
+echo ""
+
+# 🌟 核心重绘：利用单引号硬核拼装两尾代表奇迹的 3D 发光魔法小鱼阵列
+echo -e "${BLUE}                 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~"
+echo -e "                ~      ${CYAN}><(((°>${BLUE}      ~      ${CYAN}><(((°>${BLUE}      ~"
+echo -e "               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${NC}"
+echo ""
+
+# ===================== 📜 第四幕：高亮黄金卷轴剧本（完美暗示小鱼因果） =====================
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  ${YELLOW}★ THE SECRETS OF THE WATER BASIN ★${NC}                     *"
+echo '   *                                                          *'
+echo '   *  Perhaps there are fish that yet live deep inside the    *'
+echo -e "   *  magical fountain?                                       *"
+echo '   *                                                          *'
+echo '   *  💡 Look around very carefully. If you spot an entity    *'
+echo -e "   *     named ${GREEN}*fish*${NC}, remember the relative path spell!      *"
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''

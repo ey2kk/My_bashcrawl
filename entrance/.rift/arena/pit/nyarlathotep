@@ -1,0 +1,442 @@
+#!/bin/bash
+# 1. 自动引入 3 层外的全局艺术库
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+# 🔴 就地附魔声明颜色变量（铁律）
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+# 🌟 自定义克苏鲁邪神 ASCII 艺术函数（单引号神盾，绝对不崩）
+draw_boss() {
+    echo -e "${PURPLE}"
+    echo '                 _--^^^^^--_'
+    echo '              _-^           ^-_'
+    echo '             /   (o)     (o)   \'
+    echo '            |       _____       |'
+    echo '             \     \_____/     /'
+    echo '              \   / / | \ \   /'
+    echo '               \_____________/ '
+    echo '                 /  / | \  \  '
+    echo '                /  /  |  \  \ '
+    echo '               /  /   |   \  \'
+    echo -e "         ${RED}<<<< 🐙 NYARLATHOTEP 🐙 >>>>${PURPLE}"
+    echo '             V   V   V   V   V'
+    echo -e "${NC}"
+}
+
+roll() {
+    draw_boss
+    echo -e "${YELLOW}🎲 Enter a number to roll your fate:${NC}"
+    read NUM
+    ALPHA=$RANDOM
+    OMEGA=$RANDOM
+    A=`echo $ALPHA | cut -b 1-2`
+    O=`echo $OMEGA | cut -b 1-2`
+    let "NUM=$ALPHA % $OMEGA"
+    MONSTER=$RANDOM
+    MONSTER=`echo $MONSTER | cut -b 1-2`
+    NUM=`echo $NUM | cut -b 1-2`
+
+    let "MONSTER=MONSTER+3"
+
+    # 如果玩家摧毁了战鼓，BOSS会变弱！
+    if [ ! -e drum ]; then
+       let "MONSTER=MONSTER-2"
+       echo -e "${GREEN}✨ [Debuff] The drum is gone! The chaos god weakens! (-2 ATK)${NC}"
+    fi
+
+    if [[ -e wizard-dark && -e wizard-light ]]; then
+        let "NUM=NUM+2"
+        echo -e "${GREEN}⚔️ +2 Arnnisen the Gray bonus!${NC}"
+    fi
+
+    if [[ -e ../../.bless ]]; then
+        let "NUM=NUM+2"
+        echo -e "${GREEN}✨ +2 POSIX wizard bonus!${NC}"
+    fi
+
+    echo -e "👾 ${RED}Monster rolled:${NC} $MONSTER"
+    echo -e "⚔️ ${GREEN}You rolled:${NC} $NUM"
+    echo "=================================================="
+    resolve
+}
+
+gameover () {
+    # 完美保留原版的死亡尸体生成机制，并给尸体加上我们之前的安全脚本格式
+    cat << EOF > corpse
+#!/bin/bash
+source "\$(cd "\$(dirname "\${BASH_SOURCE}")" && pwd)/../../../../art.sh"
+clear
+echo "     ____      "
+echo "    /    \     "
+echo "   | R.I.P|    "
+echo "   |      |    "
+echo "  _|_ ____|_   "
+echo "=================================================="
+echo "You see the corpse of a slain adventurer on the floor."
+echo "Upon inspecting the remains, you find surviving gear:"
+echo -e "   - Items: ${YELLOW}${I}${NC}"
+echo "=================================================="
+EOF
+    chmod +x corpse
+    
+    curr=`basename $PWD`
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=`basename $PWD`
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+
+flee () {
+    echo "=================================================="
+    echo -e "${RED}You turn to flee but find that you cannot!${NC}"
+    echo "You spend 1000 years as a mindless servant to the crawling chaos."
+    echo "When you awaken, you may attempt to fight for your liberation."
+    echo "=================================================="
+}
+
+resolve() {
+    if [[ $MONSTER -eq $NUM ]]; then
+        echo -e "${YELLOW}💨 You dodge an attack, but you miss your mark as a result.${NC}"
+        echo "Roll again..."
+        echo "--------------------------------------------------"
+        roll
+    fi
+
+    if [[ $MONSTER -lt $NUM ]]; then
+        echo -e "🎉 ${GREEN}A hit! A palpable hit! You have vanquished the elder god of chaos!${NC}"
+        
+        # 完美保留获胜后生成宝物和通关文件的逻辑
+        cat << EOF > treasure
+#!/bin/bash
+if ! grep --quiet --only-matching hair <<< \$I; then
+    echo "You have found a lock of the **hair** of a god! Add it to your inventory."
+else
+    echo "This treasure has already been taken."
+fi
+EOF
+        chmod +x treasure
+
+        cat << EOF > platinum
+#!/bin/bash
+if ! grep --quiet --only-matching bracelet <<< \$I; then
+    echo "You have found an enchanted *bracelet* of chaotic necromancy! Add it to your inventory."
+else
+    echo "This treasure has already been taken."
+fi
+EOF
+        chmod +x platinum
+
+        cat << EOF > end
+#!/bin/bash
+clear
+echo "=================================================="
+echo "🎉 CONGRATULATIONS! You have completed Bashcrawl! 🎉"
+echo "=================================================="
+echo "You now know enough Bash to use it for everyday activities."
+echo "Practice makes perfect, so be sure to use it often."
+echo "=================================================="
+EOF
+        chmod +x end
+    else
+        echo -e "💥 ${RED}Your sword swings harmlessly. You take 10 points of damage!${NC}"
+        let HP=HP-10
+        export HP
+        echo -e "❤️ ${YELLOW}Current HP:${NC} $HP"
+        echo "--------------------------------------------------"
+        
+        if [ "$HP" -le 0 ]; then
+            echo -e "💀 ${RED}The elder god of chaos consumes your body and soul.${NC}"
+            echo -e "${RED}GAME OVER!${NC}"
+            gameover
+            exit 1
+        fi
+        roll
+    fi
+}
+
+# ============ 战斗开场 ============
+clear
+draw_boss
+echo "In the blink of an eye, Nyarlathotep is standing before you."
+echo -e "From its hands emanate ${PURPLE}black necrotic rays${NC}, and your mind screams."
+echo "--------------------------------------------------"
+printf "Are you armed? y/n  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    if grep --quiet --only-matching "sword" <<< $I; then
+        roll
+    else
+        echo -e "${RED}Oh, no! You have lost your blade! Nyarlathotep senses your weakness.${NC}"
+        flee
+    fi
+else
+    flee
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+#
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./nyarlathotep
+#
+# If you're not seeing the * after
+# this file name, you're probably
+# forgetting to use ls -F 
+

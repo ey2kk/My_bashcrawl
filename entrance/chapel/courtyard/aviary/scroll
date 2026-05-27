@@ -1,0 +1,84 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（2层绝对路径雷达精准校准，0%出错率）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== ❄️ 🎬 第一幕：踏入冰室！冰蓝极光暴风雪粒子带降临 =====================
+echo -e "${CYAN}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo '  *****    ***   *            FROST FROZEN CHAMBER             *   ***    *****  '
+echo '   ***      *                                                       *      ***   '
+echo -e "${NC}"
+
+echo "You step through the archway and enter a massive room..."
+echo -e "Every stone, every pillar has been deeply, ${CYAN}magically frost-bitten${NC}."
+echo "Thick snow and cracking frost completely cover the ancient ground."
+echo ""
+echo -e "${CYAN} *******  ****  **  *                                         *  **  ****  ******* ${NC}"
+echo ""
+# 🌟 故事分屏交互锚点 1
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO STEP DEEPER INTO THE FROST...${NC}"
+read -s -r
+
+# ===================== 🌊 🎬 第二幕：惊现生灵！寒冰池塘与 3D 摇摆小企鹅群 =====================
+clear
+echo -e "${BLUE}"
+echo '                        ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~        '
+echo '                      ~   *   ~   *   ~   *   ~      '
+echo '                    ~    FROZEN LAKE SURFACE    ~    '
+echo '                      ~   *   ~   *   ~   *   ~      '
+echo '                        ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~        '
+echo -e "${NC}"
+
+echo "In the far corner, you notice an icy, crystalline pond."
+echo "It shimmers in the dark, leading perhaps to a deep underground lake."
+echo "Suddenly, a few small black and white birds waddle out onto the ice,"
+echo "taking absolutely no notice of your presence..."
+echo ""
+
+echo -e "${CYAN}"
+echo '          (o o)             (o o)             (o o)      '
+echo '         /  V  \           /  V  \           /  V  \     '
+echo '        /(  _  )\         /(  _  )\         /(  _  )\    '
+echo '          ^^ ^^             ^^ ^^             ^^ ^^      '
+echo -e "${NC}"
+echo ""
+# 🌟 故事分屏交互锚点 2
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO INSPECT THE RUNIC LAWS OF THE ROOM...${NC}"
+read -s -r
+# ===================== 📜 🎬 第三幕：法则觉醒！高亮黄金卷轴说明书（Tab键终极附魔） =====================
+clear
+echo -e "${CYAN}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo -e "${NC}"
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  💡 ${YELLOW}ARCH-MAGE ADVICE ON SPACE AND TIME:${NC}                   *"
+echo '   *  You can make your shell autocomplete the long names     *'
+echo -e "   *  of files and directories by pressing the ${YELLOW}[Tab]${NC} key     *"
+echo '   *  right after typing the first few letters.               *'
+echo '   *                                                          *'
+echo '   *  When you move to the next room, try typing:             *'
+echo '   *                                                          *'
+echo -e "   *     👉  ${GREEN}cd h${NC}                                              *"
+echo '   *                                                          *'
+echo -e "   *  And then immediately press ${GREEN}[TAB]${NC} on your keyboard!      *"
+echo '   *  Watch the terminal automatically finish the incantation.*'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+
+# 终章底端粒子闭合线
+echo -e "${CYAN}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo -e "${NC}"
+echo ""

@@ -1,0 +1,78 @@
+#!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL ADVANCED MOD: THE ABANDONED LABORATORY
+# =======================================================
+
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../../../../art.sh" 2>/dev/null
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# 🎬 【第一幕：步入绝对死寂的废弃工坊】
+echo -e "${PURPLE}"
+echo '         _____________________________________________________ '
+echo '        |  ______  |  ______  |  ______  |  ______  |  ______  |'
+echo '        | |      | | |      | | |      | | |      | | |      | |'
+echo '        | |______|_| |______|_| |______|_| |______|_| |______|_|'
+echo '        |______  |______  |______  |______  |______  |______   |'
+echo '        |      | |      | |      | |      | |      | |      |  |'
+echo '        |______|_|______|_|______|_|______|_|______|_|______|_|'
+echo -e "        |      [ ${RED}THE FORSAKEN ALCHEMY LAB ]                    |"
+echo '        |______________________________________________________|'
+echo -e "${NC}"
+echo " You cross the threshold into an abandoned laboratory."
+echo " The cold workshop belongs to a powerful wizard, long since dead..."
+echo ""
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO STEP FURTHER INTO THE DARKNESS...${NC}"
+read -s -r
+
+# 🎬 【第二幕：魔能火把骤然暴燃！光影激荡】
+clear
+echo -e "${RED}"
+echo '                         (  .      )'
+echo '                       )           ('
+echo '                     (  .     (   .  )'
+echo '                     __\___________/__'
+echo '                    /                 \'
+echo '                   |   [ MAGICK TORCH ]|'
+echo '                    \_________________/'
+echo '                           |   |'
+echo '                           |   |'
+echo '                           |   |'
+echo '                           |___|'
+echo -e "${NC}"
+echo -e " Suddenly, a ${YELLOW}lone magical torch IGNITES${NC} out of thin air!"
+echo " A fierce emerald flame bursts forth, shedding bright light on the workshop."
+echo -e " It casts eerie, ${PURPLE}haunting shadows${NC} dancing across every stone surface..."
+echo ""
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO LISTEN TO THE SILENCE...${NC}"
+read -s -r
+
+# 🎬 【第三幕：青苔燃尽，天使之泣（100%保留原版剧情，高亮重组）】
+clear
+echo -e "${CYAN}* *******  ****  **  *                                         *  **  ****  ******* *${NC}"
+echo ''
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  🔥 ${RED}THE SIZZLING ECHOES OF THE CATACOMBS:${NC}                *"
+echo '   *                                                          *'
+echo '   *  The raging flames lick the walls, greedily burning off  *'
+echo '   *  the thick moss that had gathered there over centuries.  *'
+echo '   *                                                          *'
+echo -e "   *  The burning moss ${YELLOW}sizzles violently${NC} in the silence,       *"
+echo '   *  echoing through the chamber like an angelic wailing     *'
+echo '   *  or a haunting, distant singing...                       *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+echo -e "${CYAN}* *******  ****  **  *                                         *  **  ****  ******* *${NC}"
+echo ""
+
+exit 0

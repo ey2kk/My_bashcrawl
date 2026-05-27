@@ -1,0 +1,344 @@
+#!/bin/bash
+# 1. 自动引入 3 层外的全局艺术库（精准雷达）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+# 🔴 就地附魔声明颜色变量（铁律）
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+# 2. 检查玩家是否解密（战鼓文件是否存在）
+if [ -e drum ]; then
+    # ==================== 状态 A：战鼓还在，鼓手正陷入疯狂炫彩击鼓状态 ====================
+    # 播放 3 帧红蓝紫交替的狂暴击鼓残影动画
+    for frame in {1..3}; do
+        clear
+        if [ "$frame" -eq 1 ]; then
+            COLOR="${RED}"
+            WAVE_CHAR="   ( >_<)ノ🥁 "
+        elif [ "$frame" -eq 2 ]; then
+            COLOR="${BLUE}"
+            WAVE_CHAR="   ( ºДº)ノ🥁 "
+        else
+            COLOR="${PURPLE}"
+            WAVE_CHAR="   ( ☢_☢)ノ🥁 "
+        fi
+        
+        # 狂暴鼓手 ASCII 艺术矩阵
+        echo -e "${COLOR}             ${WAVE_CHAR}   ${COLOR}"
+        echo '             /__________\ '
+        echo '            |  X  X  X  | '
+        echo '            |  X  X  X  | '
+        echo '             \_________/ '
+        echo -e "${COLOR}         )))  BOOM! BOOM!  (((${NC}"
+        echo ''
+        echo '    ************************************************************'
+        echo '   *                                                          *'
+        echo -e "   *  War drums pound in the distance, giving ${RED}Nyarlathotep${NC}    *"
+        echo '   *  immense demonic strength!                               *'
+        echo '   *                                                          *'
+        echo -e "   *  If you know a spell to ${YELLOW}un-summon the drums${NC},          *"
+        echo -e "   *  Nyarlathotep would probably weaken!                     *"
+        echo '   *                                                          *'
+        echo -e "   *  💡 HINT: Look up and use the ${GREEN}rm drum${NC} command!          *"
+        echo '   *                                                          *'
+        echo '    ************************************************************'
+        sleep 0.3
+    done
+else
+    # ==================== 状态 B：战鼓已毁，鼓手瘫倒在地上，鼓声停止 ====================
+    clear
+    echo '              (x_x) '
+    echo '             // | \\ '
+    echo '            /// | \\\ '
+    echo '               _|_ '
+    echo -e "         ${BLUE}[ The Drum is Destroyed ]${NC}"
+    echo ''
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  ${GREEN}The deafening drumming has stopped...${NC}                  *"
+    echo '   *  The sinister ripples of sound dissipate into grey dust. *'
+    echo '   *                                                          *'
+    echo -e "   *  ${YELLOW}Now is your golden chance to ATTACK Nyarlathotep!${NC}       *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+#
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./drummer
+#
+# If you're not seeing the * after
+# this file name, you're probably
+# forgetting to use ls -F 
+

@@ -1,0 +1,46 @@
+#!/bin/bash
+# 1. 自动引入 3 层外的全局艺术库（精准雷达）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+# 🔴 就地附魔声明颜色变量（铁律）
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+clear
+
+# ===================== 异界规则颠倒：血红天空 夹击 倒悬浮空山与烟火树 =====================
+echo -e "${RED}🌌 [ RED SKY OF ALTERNATE REALITY ] 🌌${NC}"
+echo -e "${PURPLE}"
+echo '       /\        /\        /\    '
+echo '      /  \      /  \      /  \   '
+echo '     /~~~~\    /~~~~\    /~~~~\  '
+echo '    \      /  \      /  \      / '
+echo '     \    /    \    /    \    /  '
+echo '      \  /      \  /      \  /   '
+echo '       \/        \/        \/    '
+echo -e "${NC}"
+
+# 从天而降的“反向烟火树”：火焰由烟雾凝聚，向下倒悬生长
+echo -e "         ${RED}   ||        ||        ||    "
+echo '           /|\\      /|\\      /|\\   '
+echo '          / | \\    / | \\    / | \\  '
+echo '         /  |  \\  /  |  \\  /  |  \\ '
+echo -e "        ${YELLOW}(((🔥🔥)))((🔥🔥)))((🔥🔥)))${NC}"
+echo ''
+
+# ===================== 完美的英文剧情画卷 =====================
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  You find yourself on a world ${RED}not of this reality${NC}.       *"
+echo '   *                                                          *'
+echo -e "   *  The sky is blood red, ${PURPLE}mountains hang upside down${NC}      *"
+echo '   *  in the heavens, and trees are literal flames that form  *'
+echo '   *  from thick ash-smoke descending from above.             *'
+echo '   *                                                          *'
+echo -e "   *  You have entered the twisting threshold of the ${YELLOW}RIFT${NC}.    *"
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''

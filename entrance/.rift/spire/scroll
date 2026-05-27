@@ -1,0 +1,72 @@
+#!/bin/bash
+# 1. 自动引入 3 层外的全局艺术库（精准雷达）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+# 🔴 就地附魔声明颜色变量（铁律）
+YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+# 2. 播放 6 帧星空无限扩张、天梯不断攀升的动态动画
+for frame in {1..6}; do
+    clear
+
+    # ============ 🌟 核心升级：星空呈指数级变多、变大、变广阔 ============
+    if [ "$frame" -le 2 ]; then
+        # 🌌 初始阶段：窄幅、稀疏、暗紫色微星
+        echo -e "${PURPLE}                       *        *       "
+        echo "                          *          "
+        echo -e "                       *            *    ${NC}"
+    elif [ "$frame" -le 4 ]; then
+        # ⚡ 扩张阶段：画幅拉宽、星星变多、亮蓝色苏醒
+        echo -e "${BLUE}             * *    *   * *    *  *"
+        echo "           *   *     *      *    *"
+        echo "              *        *       "
+        echo -e "                 *          ${NC}"
+    else
+        # 👑 终极巨幕：全屏炸裂、变多变广、黄金星河大开（宽度直达60）
+        echo -e "${YELLOW}*  * *   *  * * * *  *  * *   *  * *   *  * * * *  *  * *"
+        echo "  * *    *   * *    *  *      * *    *   * *    *  *"
+        echo "*   *     *      *    *     *   *     *      *    *"
+        echo "   *        *                  *        *       "
+        echo -e "      *          *                *          *  ${NC}"
+    fi
+    echo ""
+
+    # ============ 动态阶梯攀升判定（奇偶帧横梁错位，滚动感） ============
+    if [ "$((frame % 2))" -eq 1 ]; then
+        echo '                     |___ _____|'
+        echo '                     |         |'
+        echo '                     |___ _____|'
+        echo '                     |         |'
+        echo '                     |___ _____|'
+        echo '                     |         |'
+        echo '                     |___ _____|'
+        echo '                     |         |'
+    else
+        echo '                     |         |'
+        echo '                     |___ _____|'
+        echo '                     |         |'
+        echo '                     |___ _____|'
+        echo '                     |         |'
+        echo '                     |___ _____|'
+        echo '                     |         |'
+        echo '                     |___ _____|'
+    fi
+    echo ""
+
+    # ===================== 剧情文本边框 =====================
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo '   *  The ancient stone stairway rises up beyond all sight.   *'
+    echo -e "   *  The blood-red glow of the ${YELLOW}RIFT${NC} fades far behind you... *"
+    echo -e "   *  And there is nothing but ${BLUE}absolute darkness${NC} as you      *"
+    echo '   *  ascend upward into the heavy, cosmic silence.           *'
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+
+    # 控制速度：0.2 秒刷新一帧，让星空膨胀更具有宇宙大爆炸的急促冲击感
+    sleep 0.2
+done

@@ -1,0 +1,98 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（4层绝对路径雷达精准校准，0%出错率）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 🧱 🎬 第一幕：斑驳破裂的墙面古石碑（单引号保护，100% 绝对垂直对称） =====================
+echo -e "${PURPLE}"
+echo '       ________________________________________________'
+echo '      /\  ___  ___  ___  ___  ___  ___  ___  ___  ___  \'
+echo '     /  \ \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  / \'
+echo '    / /\ \                                           / /\ \'
+echo '   / /  \ \   Once a thriving nursery filled with   / /  \ \'
+echo '  / /    \ \  vibrant plants, this is now the:     / /    \ \'
+echo ' / /      \ \                                     / /      \ \'
+echo -e " \ \       \ \     ${RED}NURSERY OF THE STILL DEAD${NC}     \ \       / /"
+echo '  \ \       \ \                                   \ \     / /'
+echo '   \ \     / /    (it says so, in writing on       \ \   / /'
+echo '    \ \   / /      the cold stone wall...)          \ \ / /'
+echo '     \ \ /_/__/_/__/_/__/_/__/_/__/_/__/_/__/_/__/___\_/ /'
+echo '      \/________________________________________________/'
+echo -e "${NC}"
+
+echo " You step over the broken vines into a room that once breathed life."
+echo -e " Cold whispers echo through the air... Welcome to the ${RED}Nursery of Death${NC}."
+echo ""
+echo -e "${PURPLE}----------------------------------------------------------------------${NC}"
+echo ""
+# 🌟 故事分屏交互锚点 1
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO EXPLORE THE WITHERED ROOTS...${NC}"
+read -s -r
+
+# ===================== 🌳 🎬 第二幕：死寂之物托儿所！3D 灰烬巨树与残破花盆（彻底清洗连环拼接截断） =====================
+clear
+echo "The air here is choked with the heavy dust of a thousand withered roots..."
+echo -e "Every single ancient stone pot in this nursery holds nothing but ${YELLOW}grey ash${NC}."
+echo "------------------------------------------------------------"
+
+# 🌟 核心重绘：利用纯单引号神盾，拼装出高达 17 行、绝对中轴线对齐的干枯巨木
+echo -e "${YELLOW}"
+echo '                       .                  .'
+echo '                    .       .        .        .'
+echo '              .       .       .        .         .'
+echo '                .       \     |      /        .'
+echo '                   .     \    |    /     .'
+echo '                      .   \   |   /   .'
+echo '                         \ \  |  / /'
+echo '                          \ \ | / /'
+echo '                           \ \|/ /'
+echo '                            \ | /'
+echo '                             | |'
+echo '                             | |'
+echo '                             | |'
+echo '                        .____| |____.'
+echo '                        \          /'
+echo '                         \________/'
+echo '                         [ Broken ]'
+echo -e "${NC}"
+
+# 🌟 故事分屏交互锚点 2
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO EXAMINATION THE DECAYING FLOOR...${NC}"
+read -s -r
+# ===================== 🍂 🎬 第三幕：腐烂落叶！荧光绿枯草 夹击 结算黄金教学大卷轴 =====================
+clear
+# 地面枯萎腐烂的落叶与干草（纯单引号免冲突清洗）
+echo -e "${GREEN}"
+echo '        _  _ __  _  ___  _ _  __ _ _  _  __ _ _ _ _'
+echo '       ( )_)(_)(_)(___)(_(_)(_)(_(_)(_)(_)(_)(_(_(_)'
+echo -e "${NC}"
+echo ""
+
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  🍂 ${YELLOW}THE LESSONS OF THE DECAYED NURSERY:${NC}                  *"
+echo '   *                                                          *'
+echo '   *  The air here is choked with the dust of withered roots. *'
+echo '   *  But beneath the grey ash lies a powerful truth...       *'
+echo '   *                                                          *'
+echo -e "   *  💡 You have successfully navigated into the hidden      *"
+echo -e "   *     ${PURPLE}SCRAP & NURSERY SYSTEM DIRECTORIES${NC}!               *"
+echo '   *                                                          *'
+echo '   *  👉 REMEMBER TO USE YOUR TRUSTED SPELLS OFTEN:           *'
+echo -e "   *     Cast ${GREEN}\`ls -F\`${NC} to reveal hidden secret pathways!     *"
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+echo "============================================================"
+echo -e " 🔓 ${GREEN}[SUCCESS]: Hidden nursery sector mapped completely.${NC}"
+echo "============================================================"
+echo ""

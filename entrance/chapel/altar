@@ -1,0 +1,368 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（2层绝对路径雷达精准校准，0%出错率）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 🎬 第一幕：远古崩坏祭坛与神秘饰品（单引号神盾，完美垂直中轴线对齐） =====================
+echo -e "${PURPLE}"
+echo '                        .-------.              '
+echo '                       /   ___   \             '
+echo -e "                      |   ${CYAN}( ◈ )${PURPLE}   |            "  # 悬浮在祭坛上方的神秘饰品
+echo '                       \   """   /             '
+echo '                   .----`-------`----.         '
+echo '                  /                   \        '
+echo '                 /  =================  \       '
+echo '                /  [  ANCIENT ALTAR  ]  \      '
+echo '               /_________________________\     '
+echo '               |  _ _               _ _  |     '
+echo '               | | | |   * * *   | | | | |     '
+echo '               | |_|_|   * * *   |_|_|_| |     '
+echo '               |_________________________|     '
+echo -e "${NC}"
+
+# ===================== 📜 核心剧情大卷轴 =====================
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  In the dark corner is a decaying, weathered ${PURPLE}OLD ALTAR${NC}   *"
+echo '   *  dedicated to some long-forgotten cosmic god.            *'
+echo '   *                                                          *'
+echo -e "   *  There is a small, cracked ${CYAN}trinket${NC} resting on the floor.*"
+echo '   *  It looks deeply religious and heavy in nature.          *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+
+printf "Do you want to put the trinket back on the altar? y/n  "
+read RESP
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    # 🌟 业报分支 A：神圣救赎（解锁 .bless）
+    clear
+    echo -e "${GREEN}"
+    echo '               +  +  +  +  +  '
+    echo '               +  DIVINE   + '
+    echo '               +  BLESSING +'
+    echo '               +  +  +  +  +  '
+    echo -e "${NC}"
+    echo '    ************************************************************'
+    echo '   *                                                           *'
+    echo -e "   *  ${GREEN}You gently place the ancient trinket back upon the Altar.${NC}*"
+    echo '   *  A sudden, warm breeze sweeps softly through the vault.   *'
+    echo '   *  The heavy guilt lifts from your weary shoulders...       *'
+    echo '   *                                                           *'
+    echo '    ************************************************************'
+    echo ""
+    touch .bless
+else
+    # 进入暗黑内心质问分流
+    clear
+    printf "Do you want to take the forbidden trinket for yourself? y/n  "
+    read RESP
+    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+        # 💀 业报分支 B：极度贪婪（打上诅咒印记 .curse）
+        clear
+        echo -e "${RED}"
+        echo '               💀  💀  💀  💀  💀 '
+        echo '               💀   CURSED     💀 '
+        echo '               💀   AVARICE    💀 '
+        echo '               💀  💀  💀  💀  💀 '
+        echo -e "${NC}"
+        echo '    ************************************************************'
+        echo '   *                                                           *'
+        echo -e "   *  🚨 ${RED}THE EYE OF THE GOD FLASHES RED IN DISTANT WRATH!${NC}      *"
+        echo '   *  You greedily pocket the relic. It burns cold as ice...   *'
+        echo '   *                                                           *'
+        echo -e "   *  👉 REMEMBER TO ADD THIS TO YOUR INVENTORY AT ONCE:       *"
+        echo -e "   *     ${YELLOW}export I=trinket,\$I${NC}                                   *"
+        echo '   *                                                           *'
+        echo '    ************************************************************'
+        echo ""
+        touch .curse
+    else
+        # 🍂 业报分支 C：冷漠离去（打上诅咒印记 .curse）
+        clear
+        echo -e "${BLUE}"
+        echo '               ~  ~  ~  ~  ~  ~  ~'
+        echo '               ~   S A D N E S S ~'
+        echo '               ~   A B A N D O N ~'
+        echo '               ~  ~  ~  ~  ~  ~  ~'
+        echo -e "${NC}"
+        echo '    ************************************************************'
+        echo '   *                                                           *'
+        echo -e "   *  ${BLUE}You leave the sacred trinket decaying right where it lies.${NC}*"
+        echo '   *  A heavy, echoing sadness fills the damp air around you.  *'
+        echo '   *  You feel an icy compulsion forcing you to move onward.   *'
+        echo '   *                                                           *'
+        echo '    ************************************************************'
+        echo ""
+        touch .curse
+   fi
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+#
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./altar
+#
+# If you're not seeing the * after
+# this file name, you're probably
+# forgetting to use ls -F 
+
+

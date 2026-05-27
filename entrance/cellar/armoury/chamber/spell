@@ -1,0 +1,340 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（3层绝对路径雷达精准微调）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 🎬 第一幕：西侧古代巨大符文石墙（已剔除现代字母 Jaeger） =====================
+echo -e "${PURPLE}"
+echo '         .-----------------------------------------------------.'
+echo '        /  \     ᚠ  ᚢ  ᚦ  ᚨ  ᚱ  ᚲ  ᚷ  ᚹ  ᚺ  ᚾ  ᛁ  ᛃ  ᛇ  ᛉ      /  \'
+echo '       /    \   ________________________________________   /    \'
+echo '      /      \ |                                        | /      \'
+echo -e "     /   ${YELLOW}◈${PURPLE}   \|      ${CYAN}ANCIENT MYSTIC RUNES INSCRIPTION${PURPLE}    |/   ${YELLOW}◈${PURPLE}   \\"
+echo '    /_________\|                                        |/_________\'
+echo '    |         ||   ᛏ  ᛒ   ᛥ  ᛧ  ᛨ  ᛖ  ᛗ  ᛚ  ᛜ  ᛟ  ᛞ    ||         |'
+echo '    |         ||________________________________________||         |'
+echo '    |         |/________________________________________\|         |'
+echo '    |_________|                                          |_________|'
+echo -e "${NC}"
+
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo '   *  Runes, the language of the ancient mystics that once    *'
+echo '   *  ruled this land, are inscribed upon the western wall.   *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+
+printf "Do you want to read and decipher the runes? y/n  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    # ===================== 🎬 第二幕：解密成功！传送门能量漩涡轰然大开（100% 纯单引号纯净版） =====================
+    clear
+    echo -e "${CYAN}"
+    echo '                    .-------.       '
+    echo '                 .-"         "-.    '
+    echo '               ./               \.  '
+    echo '              /                   \ '
+    echo -e "             |   ${YELLOW}⚡ PORTAL OPEN ⚡${CYAN}  | "
+    echo '             |                     | '
+    echo '              \                   / '
+    echo '               \.__           __./  '
+    echo '                   "-"-----"-"      '
+    echo -e "${NC}"
+    
+    # 彻底转换为纯单引号复印行，死死掐断任何由于反斜杠造成的转义乱码！
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  You recall the lessons of ${GREEN}Caitlyn the Green${NC}, who       *"
+    echo '   *  taught you these ancient letters long ago...            *'
+    echo '   *                                                          *'
+    echo -e "   *  The runes are instructions to summon a ${YELLOW}PORTAL${NC} that     *"
+    echo -e "   *  will open an ${CYAN}invisible door${NC} contained in this wall!    *"
+    echo '   *                                                          *'
+    echo -e "   *  💡 In Bash, a symbolic link (symlink) is a ${GREEN}*shortcut*${NC}  *"
+    echo '   *     to another hidden file or directory.                 *'
+    echo '   *                                                          *'
+    echo '   *  👉 CAST THE INCANTATION TO RIP OPEN THE WALL:           *'
+    echo -e "   *     ${GREEN}ln -fs ../../../chapel/courtyard/aviary/hall portal${NC} *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+    echo ''
+    
+    # 🌟 核心修复：加入时空锚点停顿，让传送门和命令稳定卡在屏幕上，绝不闪退！
+    echo -e "${YELLOW}============================================================${NC}"
+    echo -n " 👉 PRESS [ENTER] TO DISMISS THE INVOCATION AND RETURN... "
+    read RET_ENTER
+else
+    # ===================== 🎬 第三幕：放弃阅读，保留传统古迹的寂静 =====================
+    echo "------------------------------------------------------------"
+    echo -e "🛑 ${YELLOW}You decide it is probably best to leave magical${NC}"
+    echo "   inscriptions completely undisturbed as they are."
+    echo "------------------------------------------------------------"
+    echo ""
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./spell
+

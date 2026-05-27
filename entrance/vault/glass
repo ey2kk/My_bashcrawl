@@ -1,0 +1,288 @@
+#!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL ADVANCED MOD: THE FROSTED ALTAR (FIXED)
+# =======================================================
+
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh" 2>/dev/null
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# 🎬 【凡人无缘分支：没有冰晶】
+no_crystal () {
+    clear
+    echo -e "${PURPLE}"
+    echo '                 .               .               '
+    echo '                  \             /                '
+    echo '                 .-`---.....---`-.               '
+    echo '                /                 \              '
+    echo '               |    NO CRYSTAL     |             '
+    echo '                \_________________/              '
+    echo -e "${NC}"
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  ${PURPLE}You sense that the glass shards are searching for${NC}       *"
+    echo '   *  something lost deep within the eternal frost...        *'
+    echo -e "   *  Whatever it is, you ${RED}cannot provide it${NC} right now.        *"
+    echo '   *                                                          *'
+    echo '   *  Walk with absolute care. Return when you are truly ready.*'
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+    echo ""
+}
+
+# 🎬 【第一幕：步入碎裂的冰霜圣坛】
+echo -e "${CYAN}"
+echo '                     *         .           *     '
+echo '                    / \       / \         / \    '
+echo '                   /   \_____/   \_______/   \   '
+echo '                  /                           \  '
+echo '                 /  *  *  SHARDS OF GLASS *  * \ '
+echo '                /_______________________________\'
+echo '                \       /     \     /     \     / '
+echo '                 \_____/_______\___/_______/___/  '
+echo -e "                ${BLUE}★ THE FROSTED ALTAR OF SHARDS ★${NC}"
+echo ''
+
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo '   *  You stand before a pile of glittering glass shards.     *'
+echo '   *  They glow with a faint, chilling magical energy...      *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+
+printf " Do you have an ice crystal to approach the shards? (y/n): "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    # 💡 重新焊回原版最高真理判定：强行抽查玩家的背包（环境变量 $I）
+    if grep --quiet --only-matching 'crystal' <<< $I; then
+        # 🎬 【第二幕：冰晶共鸣，冰霜百裂极光爆发！】
+        clear
+        echo -e "${YELLOW}"
+        echo '               *  *  *  *  *  '
+        echo '               *  1 0 0 0  * '
+        echo '               *  BLIZZARDS* '
+        echo '               *  *  *  *  *  '
+        echo -e "${NC}"
+
+        echo '    ************************************************************'
+        echo '   *                                                          *'
+        echo -e "   *  ${GREEN}You carefully place the white ice crystal among the shards!${NC}*"
+        echo -e "   *  Suddenly, the legendary ${CYAN}sword${NC} in your hands freezes solid!*"
+        echo -e "   *  You feel the limitless power of ${BLUE}1000 blizzards${NC} coursing  *"
+        echo '   *  violently through your veins!                           *'
+        echo '   *                                                          *'
+        echo -e "   *  ✨ ${YELLOW}THE HOLY EXTRA BLESSING HAS BEEN ACTIVATED!${NC}        *"
+        echo '   *                                                          *'
+        echo '    ************************************************************'
+        echo ""
+        
+        # 写入真正的解密核心状态（原版逻辑）
+        touch .bless
+        
+        # 🎬 【第三幕：终章教学线索反馈】
+        echo "============================================================"
+        echo -e " 🔓 ${GREEN}[SUCCESS]: The ritual is complete. Spell history updated.${NC}"
+        echo "============================================================"
+        echo " You can check your active inventory and blessings by typing:"
+        echo -e "   👉  \033[1;32mecho \$I && ls -A\033[0m"
+        echo "------------------------------------------------------------"
+        echo ""
+    else
+        # 有说谎嫌疑（虽然按了 y 却没带冰晶），一律打回防线
+        no_crystal
+    fi
+else
+    # 拒绝或没带，优雅退回
+    no_crystal
+fi
+
+exit 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./glass
+
+

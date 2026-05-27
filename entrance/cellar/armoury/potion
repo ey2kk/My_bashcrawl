@@ -1,0 +1,366 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（3层绝对路径雷达精准校准）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+# 2. 播放 3 帧药水瓶内绿液翻滚、气泡“咕嘟咕嘟”向上升腾的动态动画
+for frame in {1..3}; do
+    clear
+
+    # ============ 🌟 核心升级：魔法药水瓶 3D ASCII 动态气泡判定 ============
+    echo -e "${CYAN}"
+    echo '                 .-----.      '
+    echo '                 |     |      '
+    echo '                .-`---`-.     '
+    echo '               /         \    '
+    if [ "$frame" -eq 1 ]; then
+        # 帧 1：气泡在底部凝聚
+        echo -e "              |  ${GREEN}. . . .${CYAN}  |   "
+        echo -e "              |  ${GREEN}~~~~~~~${CYAN}  |   "
+    elif [ "$frame" -eq 2 ]; then
+        # 帧 2：气泡升腾至中部
+        echo -e "              |  ${GREEN} o o o ${CYAN}  |   "
+        echo -e "              |  ${GREEN}~~~~~~~${CYAN}  |   "
+    else
+        # 帧 3：气泡在液面破裂
+        echo -e "              |  ${GREEN}* * * *${CYAN}  |   "
+        echo -e "              |  ${GREEN}~~~~~~~${CYAN}  |   "
+    fi
+    echo '               \_________/      '
+    echo -e "${NC}"
+
+    # ===================== 📜 剧情说明（星号卷轴，100%单引号安全） =====================
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  You have found a heavy potion bottle of swirling,       *"
+    echo -e "   *  glowing ${GREEN}green liquid${NC}.                                 *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+    echo ''
+    
+    # 液体翻滚频率：0.25秒一帧
+    sleep 0.25
+done
+
+printf "Do you want to drink it? y/n  "
+read RESP
+
+clear
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    # 🧪 分支 A：喝下绿色药水，爆发治愈极光
+    echo -e "${GREEN}"
+    echo '               +  +  +  +  +  +  '
+    echo '               +  V I T A L   + '
+    echo '               +  H E A L T H +'
+    echo '               +  +  +  +  +  + '
+    echo -e "${NC}"
+    echo "The taste of a rustic green plant fills your mouth with raw power."
+    echo -e "It warms and strengthens your entire body. ${GREEN}(HP Gained!)${NC}"
+    echo "------------------------------------------------------------"
+    echo "Create a variable for your health points (HP). You have 15HP:"
+    echo -e "   👉  ${GREEN}export HP=15${NC}"
+    export HP=15
+else
+    # 🧪 分支 B：拒绝喝药，保持警惕
+    echo -e "${RED}"
+    echo '               X  X  X  X  X  X  X'
+    echo '               X  C A U T I O N  X'
+    echo '               X  S A F E T Y    X'
+    echo '               X  X  X  X  X  X  X'
+    echo -e "${NC}"
+    echo "You weren't born yestermorn. This strange potion is probably poison."
+    echo -e "You carefully cork the bottle back. ${YELLOW}(Play it safe!)${NC}"
+    echo "------------------------------------------------------------"
+    echo "Create a variable for your health points (HP). You have 10HP:"
+    echo -e "   👉  ${GREEN}export HP=10${NC}"
+    export HP=10
+fi
+echo "------------------------------------------------------------"
+
+# ===================== 💡 底端教学与地图全解锁神级核心逻辑（100%安全留存） =====================
+echo "You can check your health status at any time by typing:"
+echo -e "   👉  ${GREEN}echo \$HP${NC}"
+echo "============================================================"
+echo -e "📢 ${CYAN}[SYSTEM]: Deep hydraulic rumbles reverberate through the crawl...${NC}"
+echo -e "   ${YELLOW}The spells have triggered! 3 Hidden Areas have been unlocked!${NC}"
+echo "============================================================"
+echo ""
+
+# 🔒 誓死捍卫的原版 mv 隐藏大区神级解密开关（无声运行，确保游戏推进）
+mv ../../.chapel ../../chapel 2>/dev/null
+mv ../../.vault ../../vault 2>/dev/null
+mv ../../.scrap ../../scrap 2>/dev/null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./potion
+

@@ -1,0 +1,31 @@
+              .-----------------------------------.             
+             (_\                                   \_)          
+               |    📜  THE ANCIENT SCROLLS  📜     |            
+               |                                   |             
+               |     Learn the laws of paths...    |             
+               |                                   |             
+             (_/___________________________________\_)           
+             (__)                                 (__)           
+
+
+    ************************************************************
+   *                                                          *
+   *  You can interact with items in the room (they end with  *
+   *  an asterisk *) by running them as a command script.     *
+   *                                                          *
+   *  For example, to collect a sparkling treasure:           *
+   *     👉  ./treasure                                       *
+   *                                                          *
+   *  The . (dot) means *don't move*, and the name of the     *
+   *  script makes the code run. This is a relative path!     *
+   *  The . strictly means the current room (directory).      *
+   *                                                          *
+   *  You may have left shiny treasure in the previous room.  *
+   *  Go back to a previous directory with two dots,          *
+   *  which means *take a single step backward*.              *
+   *                                                          *
+   *  EXAMPLE INCANTATION:                                    *
+   *     👉  cd ..                                            *
+   *                                                          *
+    ***********************************************************
+

@@ -1,0 +1,82 @@
+#!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL ADVANCED MOD: THE GRAND LIBRARY SCROLL
+# =======================================================
+
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../../../art.sh" 2>/dev/null
+
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# 🎬 【第一幕：步入幽静的尘封书库】
+echo -e "${BLUE}"
+echo '         _____________________________________________________ '
+echo '        |  ______  |  ______  |  ______  |  ______  |  ______  |'
+echo '        | |      | | |      | | |      | | |      | | |      | |'
+echo '        | |______|_| |______|_| |______|_| |______|_| |______|_|'
+echo '        |______  |______  |______  |______  |______  |______   |'
+echo '        |      | |      | |      | |      | |      | |      |  |'
+echo '        |______|_|______|_|______|_|______|_|______|_|______|_|'
+echo -e "        |     [ ${YELLOW}THE SILENT DUSTY ARCHIVES ${BLUE} ]                   |"
+echo '        |______________________________________________________|'
+echo -e "${NC}"
+echo " You step into a small, secluded library. Knicknacks gather dust"
+echo " on towering shelves that surround you on all sides..."
+echo ""
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO APPROACH THE CENTRAL TABLE...${NC}"
+read -s -r
+
+# 🎬 【第二幕：神圣翻开的巨型羊皮古籍】
+clear
+echo -e "${YELLOW}"
+echo '                 .-----------------------------------.'
+echo '                /  \                                 \ '
+echo '               /____\     ______________________      \ '
+echo '               |    |    /                      \     |'
+echo '               |    |   |   THE REVELATION OF    |    |'
+echo '               |    |   |     THE ANCIENTS       |    |'
+echo '               |    |    \______________________/     |'
+echo '               |    |                                 |'
+echo '               |    |    .-----------------------.    |'
+echo '               |    |   /   [ READ THE CODE ]     \   |'
+echo '               |    |  |                           |  |'
+echo '               |    |   \_________________________/   |'
+echo '               |    |                                 |'
+echo '               \____/_________________________________/'
+echo -e "${NC}"
+echo " Before you sits a heavy mahogany table."
+echo -e " Rested upon it is a ${YELLOW}very large tome, left wide open${NC} by a past scholar."
+echo ""
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO DECIPHER THE TOMES INK...${NC}"
+read -s -r
+
+# 🎬 【第三幕：原始剧情指南高亮呈现（0%内容删减）】
+clear
+echo -e "${CYAN}* *******  ****  **  *                                         *  **  ****  ******* *${NC}"
+echo ''
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  📜 ${YELLOW}THE CHRONICLES ENCRYPTED ON THE OPEN PAGE:${NC}           *"
+echo '   *                                                          *'
+echo '   *  You are in a small library. There are shelves on all    *'
+echo '   *  sides of the room, containing many books and            *'
+echo '   *  knicknacks. Before you, there is a small table with     *'
+echo '   *  a very large book open on it.                           *'
+echo '   *                                                          *'
+echo -e "   *  👉 ${GREEN}PRO TIP: INVESTIGATE BY INSPECTING RE-USE TOOLS${NC}        *"
+echo '   *     Search deeper into the shelves to find more secrets! *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+echo -e "${CYAN}* *******  ****  **  *                                         *  **  ****  ******* *${NC}"
+echo ""
+
+# 赋予该动画脚本执行权限，使其配合猫咪别名稳定释放
+chmod +x "$0" 2>/dev/null
+exit 0
+

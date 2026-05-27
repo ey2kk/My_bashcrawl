@@ -1,0 +1,55 @@
+#!/bin/bash
+# 1. 自动引入 4 层外的全局艺术库（精准路径雷达）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../art.sh"
+
+# 🔴 就地附魔声明颜色变量（铁律）
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+clear
+
+# ===================== 🎬 第一幕：尖塔观景窗（璀璨繁星 夹击 核心爆红裂缝，100% 像素级对齐） =====================
+echo -e "${BLUE}  *   *      .        *      .      *   * "
+echo "    .     *      .       *      .     *   "
+echo -e "  *    .      *      .       *     .     *${NC}"
+echo -e "${YELLOW}===============================================${NC}"
+
+# 核心对齐行：外围全染紫色，最中间那一行的右侧窗框人工对冲空格，实现绝对垂直死齐！
+echo -e "${PURPLE} \                                             /"
+echo "  \                                           /"
+echo "   \     ~~~~~~~/   \~~~~~~~~~~~~~~~~        /"
+echo "    \    ======/     \===============       /"
+echo -e "     \\   _____(  ${RED}< < < RED RIFT > > >${PURPLE}  )____ /"
+echo "      \  ======\     /===============     /"
+echo "       \ _______\___/________________    /"
+echo -e "        \\_______________________________________/${NC}"
+
+# 带有发光符文的科幻尖塔气动大门
+echo -e "${PURPLE}                  _______"
+echo '                 |       |'
+echo '                 |       |'
+echo '                 |       |'
+echo -e "                 |  ${GREEN}◉◯◉${PURPLE}  |"
+echo -e "                 |_______|${NC}"
+echo ''
+
+# ===================== 📜 第二幕：完美的官方全英剧情画卷（已打通颜色附魔与对齐） =====================
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo '   *  You peer out the narrow window and see an awesome,      *'
+echo '   *  cosmic sight that leaves you speechless.                *'
+echo '   *                                                          *'
+echo -e "   *  The blood-red glow of the ${YELLOW}RIFT${NC} far below meets the    *"
+echo -e "   *  inky black sky, dotted by ${BLUE}more sparkling stars${NC}       *"
+echo '   *  than you have ever witnessed in your life.              *'
+echo '   *  The view of the endless horizon takes your breath away. *'
+echo '   *                                                          *'
+echo -e "   *  Beside the glass, you notice a closed doorway with      *"
+echo -e "   *  a single, ${GREEN}glowing control button${NC}.                    *"
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''

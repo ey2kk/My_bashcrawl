@@ -1,0 +1,215 @@
+#!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL ADVANCED MOD: THE EIGHT-ARMED BEAST
+# =======================================================
+
+# 1. 自动引入全局艺术库
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../art.sh" 2>/dev/null
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+gameover () {
+    cat << EOF > corpse
+You see the corpse of a slain adventurer on the floor of the
+dungeon.  You find the following items on the corpse:
+
+${I}
+
+EOF
+    curr=`basename $PWD`
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=`basename $PWD`
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+
+# 🎬 【第零幕：如果怪兽已经被击杀，化为残骸】
+if [ "$0" = "./carcass" ]; then
+    clear
+    echo -e "${YELLOW}"
+    echo '        __  __  ____  _   _ ____ _____ _____ ____  '
+    echo '       |  \/  |/ __ \| \ | / ___|_   _| ____|  _ \ '
+    echo '       | |\/| | |  | |  \| \___ \ | | |  _| | |_) |'
+    echo '       | |  | | |__| | |\  |___) || | | |___|  _ < '
+    echo '       |_|  |_|\____/|_| \_|____/ |_| |_____|_| \_\'
+    echo -e "${NC}"
+    echo " You find the carcass of a foul beast."
+    echo " Nothing of interest lies within its remains."
+    echo ""
+    exit 0
+fi
+
+# 🎲 核心机制：疯狂骰子对决（融入多幕清屏特效）
+roll() {
+    echo -e "\n 🎲 Ready your mind for the clash of fates..."
+    printf " Enter a lucky number to cast your attack spell: "
+    read NUM
+    
+    # 保持原版随机数裁剪逻辑（0%数据污染）
+    ALPHA=$RANDOM
+    OMEGA=$RANDOM
+    A=`echo $ALPHA | cut -b 1-2`
+    O=`echo $OMEGA | cut -b 1-2`
+    let "NUM=$ALPHA % $OMEGA"
+    MONSTER=$RANDOM
+    MONSTER=`echo $MONSTER | cut -b 1-2`
+    NUM=`echo $NUM | cut -b 1-2`
+    
+    clear
+    echo -e "${PURPLE}======================================================================${NC}"
+    echo -e " ⚔️  ${RED}THE MONSTER ROLLED : $MONSTER${NC}"
+    echo -e " ⚔️  ${GREEN}YOU ROLLED         : $NUM${NC}"
+    echo -e "${PURPLE}======================================================================${NC}"
+    echo ""
+    echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO RESOLVE THE CLASH...${NC}"
+    read -s -r
+    resolve
+}
+
+# ⚖️ 战斗结果裁决所
+resolve() {
+    # 1. 检查有没有带剑（原版硬核判定）
+    if ! grep --quiet --only-matching 'sword' <<< $I; then
+        echo -e "${YELLOW} ⚠️  WARNING: You do not have a SWORD in your Bag of Holding!${NC}"
+        echo " Your barehanded punches are barely scratching its leathery flesh..."
+        echo " Penalty inflicted: Your roll value is reduced by 10!"
+        echo ""
+        let NUM=NUM-10
+    fi
+
+    # 2. 战况分支 A：互相招架（进入完美无限循环）
+    if [[ $MONSTER -eq $NUM ]]; then
+        echo -e "${YELLOW}"
+        echo '        ____   _    ____  ______   __  '
+        echo '       |  _ \ / \  |  _ \|  _ \ \ / /  '
+        echo '       | |_) / _ \ | |_) | |_) \ V /   '
+        echo '       |  __/ ___ \|  _ <|  _ < | |    '
+        echo '       |_| /_/   \_\_| \_\_| \_\|_|    '
+        echo -e "${NC}"
+        echo -e " Sparks fly! ${YELLOW}You each parry one another's deadly attacks!${NC}"
+        echo " The beast roars and lunges again! You must roll once more!"
+        roll
+    fi
+
+    # 3. 战况分支 B：正面击杀（获得皇冠奖励）
+    if [[ $MONSTER -lt $NUM ]]; then
+        clear
+        echo -e "${GREEN}"
+        echo ' __      _______ _____ _______ ____  _______     __'
+        echo ' \ \    / /_   _/ ____|__   __/ __ \|  __ \ \   / /'
+        echo '  \ \  / /  | || |       | | | |  | | |__) \ \_/ / '
+        echo '   \ \/ /   | || |       | | | |  | |  _  / \   /  '
+        echo '    \  /   _| || |____   | | | |__| | | \ \  | |   '
+        echo '     \/   |_____\_____|  |_|  \____/|_|  \_\ |_|   '
+        echo -e "${NC}"
+        echo -e " 🌟 ${GREEN}A HIT! A PALPABLE HIT!${NC} You pierced through its leathery hide!"
+        echo " You have successfully SLAIN the three-legged leviathan!"
+        echo ""
+        echo " The monster collapses, its 8 arms shaking as it takes its final breath."
+        echo -e " Its heavy flesh hardens... leaving a ${YELLOW}carcass${NC} on the cold floor."
+        echo ""
+
+        # 100% 物理留存原版的宝藏生成逻辑与重命名代码
+        cat << 'EOF' > treasure
+#!/bin/bash
+if ! grep --quiet --only-matching crown <<< $I; then
+    cat << eof
+You search the area and found a shimmering **crown**!
+Add it to your inventory right now by casting:
+
+    👉 export I="\$I,crown"
+
+eof
+else
+    echo "This treasure has already been taken by you."
+fi
+EOF
+        chmod +x treasure
+        mv monster carcass
+        exit 0
+    
+    # 4. 战况分支 C：攻击被弹开（受伤机制）
+    else
+        clear
+        echo -e "${RED}"
+        echo '        ____   _    ___ _   _ '
+        echo '       |  _ \ / \  |_ _| \ | |'
+        echo '       | |_) / _ \  | ||  \| |'
+        echo '       |  __/ ___ \ | || |\  |'
+        echo '       |_| /_/   \_\___|_| \_|'
+        echo -e "${NC}"
+        echo -e " ❌ ${RED}ATTACK DEFLECTED!${NC}"
+        echo " Your blade bounces off the monster's iron-like leathery flesh."
+        echo -e " A barbed tail whips across your face, dealing ${RED}5 points of damage${NC}!"
+        echo ""
+        echo -e " ⚠️  DEDUCT 5 FROM YOUR HP VARIABLE AT ONCE:"
+        echo -e "    ${YELLOW}let \"HP=HP-5\"${NC}"
+        echo ""
+
+        # 实时同步后台生命扣除数据
+        let HP=HP-5
+        export HP
+        
+        # 检查是否死亡
+        if [ "$HP" -le 0 ]; then
+            clear
+            echo '  ____    _    _   _ _____    ___  _   _ _____ ____  '
+            echo ' / ___|  / \  | \ | | ____|  / _ \| | | | ____|  _ \ '
+            echo '| |  __  / _ \ |  \| |  _|   | | | | | | |  _| | |_) |'
+            echo '| |_| |/ ___ \| |\  | |___  | |_| | \_/ /| |___|  _ < '
+            echo ' \____/_/   \_\_| \_|_____|  \___/ \___/|_____|_| \_\'
+            echo -e " You have been brutally torn apart by the animated nightmare."
+            echo -e " ${RED}YOU ARE SLAIN!${NC}"
+            gameover
+            exit 1
+        fi
+        
+        # 没死，逼迫继续投骰子战斗（原版死循环逻辑）
+        echo -e -n " 👉 ${RED}PRESS [ENTER] TO RE-ENGAGE IN BATTLE...${NC}"
+        read -s -r
+        roll
+    fi
+}
+
+# 🎬 【第一幕：巨兽阻路，战斗拉开帷幕】
+clear
+echo -e "${RED}"
+echo '                    .---.         .---.      '
+echo '                   /     \       /     \     '
+echo '                   \ O O /       \ O O /     '
+echo '                .-` \_/_/ `-. .-` \_/_/ `-.  '
+echo '               /   |_   _|   \   |_   _|   \ '
+echo '              | -- | | | | -- | -- | | | | --|'
+echo '               \   |_|_|_|   /   |_|_|_|   / '
+echo '                `----- -----`     ----- -----`'
+echo '               /  /       \  \   /  /       \  \'
+echo '              /_ /_________\ _\_/_ /_________\ _\'
+echo '              |                 |               |'
+echo -e "${NC}"
+echo -e " A hulking ${RED}THREE-LEGGED BEAST${NC}, with a mouth full of fangs,"
+echo -e " a barbed tail, and ${RED}8 terrifying arms${NC}, lumbers fiercely toward you!"
+echo ""
+echo " If you have a sword, you can stand and fight. Otherwise, RUN!"
+echo " ----------------------------------------------------------------------"
+printf " Do you want to attack this roaring leviathan? (y/n): "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    roll
+else
+    # 逃跑路线
+    clear
+    echo -e "${YELLOW}🏃 FLEE! WISELY TURN AND RUN FOR YOUR LIFE!${NC}"
+    echo " You sprinted back into the shadows as fast as your legs could carry you."
+    echo -e " Quickly change your location directory back to safety: ${CYAN}cd ..${NC}"
+    echo ""
+fi

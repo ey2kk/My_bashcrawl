@@ -1,0 +1,457 @@
+#!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL ADVANCED MOD: THE WRATH OF THE GHOST
+# =======================================================
+
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../../../../art.sh" 2>/dev/null
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+gameover () {
+    cat << EOF > corpse
+You see the corpse of a slain adventurer on the floor of the
+dungeon.  You find the following items on the corpse:
+
+$I
+
+EOF
+    curr=$(basename "$PWD")
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=$(basename "$PWD")
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+
+# 🎲 核心机制：虚空骰子决斗（融入冰霜祝福彩蛋动画）
+roll() {
+    echo -e "\n 🔮 Gaze into the phantom rift..."
+    printf " Enter your focal power number to strike the spirit: "
+    read NUM
+    
+    # 保持官方原版随机数裁剪逻辑（0%数据污染）
+    ALPHA=$RANDOM
+    OMEGA=$RANDOM
+    A=`echo $ALPHA | cut -b 1-2`
+    O=`echo $OMEGA | cut -b 1-2`
+    let "NUM=$ALPHA % $OMEGA"
+    MONSTER=$RANDOM
+    MONSTER=`echo $MONSTER | cut -b 1-2`
+    NUM=`echo $NUM | cut -b 1-2`
+
+    clear
+    echo -e "${PURPLE}======================================================================${NC}"
+    echo -e " 👻 ${RED}THE GHOST ROLLED : $MONSTER${NC}"
+    echo -e " 🧙 ${GREEN}YOU ROLLED       : $NUM${NC}"
+    
+    # 💡 核心彩蛋完美爆发：检测冰霜圣坛的 .bless 祝福
+    if [ -e ../../../.bless ]; then
+        let "NUM=NUM+2"
+        echo -e "${CYAN}----------------------------------------------------------------------"
+        echo -e " ❄️  [❄️ 1000 BLIZZARDS RESONANCE ACTIVE! ❄️]                             "
+        echo -e "    +2 bonus power infused by your mysterious wintry patron!          "
+        echo -e "    YOUR FINAL SPELL VALUE SURGES TO: $NUM${NC}"
+    fi
+    echo -e "${PURPLE}======================================================================${NC}"
+    echo ""
+    echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO UNLEASH THE FORCE...${NC}"
+    read -s -r
+}
+
+# ⚖️ 命运裁决之剪
+resolve() {
+    # 战况分支 A：互相躲闪招架（进入完美循环判定）
+    if [[ $MONSTER -eq $NUM ]]; then
+        clear
+        echo -e "${PURPLE}"
+        echo '         .---.             .---.         '
+        echo '        /     \   MISS!   /     \        '
+        echo '        \ O O /  <=====>  \ O O /        '
+        echo '         `---`             `---`         '
+        echo -e "${NC}"
+        echo -e " 💨 You ${PURPLE}dodge an attack${NC}, but you miss your mark as a direct result!"
+        echo " The ethereal form evaporates and reforms instantly. Roll again!"
+        roll
+        resolve
+    fi
+
+    # 战况分支 B：强行打散幽灵（大获全胜，掉落绿宝石与白金）
+    if [[ $MONSTER -lt $NUM ]]; then
+        clear
+        echo -e "${GREEN}"
+        echo ' __      _______ _____ _______ ____  _______     __'
+        echo ' \ \    / /_   _/ ____|__   __/ __ \|  __ \ \   / /'
+        echo '  \ \  / /  | || |       | | | |  | | |__) \ \_/ / '
+        echo '   \ \/ /   | || |       | | | |  | |  _  / \   /  '
+        echo '    \  /   _| || |____   | | | |__| | | \ \  | |   '
+        echo '     \/   |_____\_____|  |_|  \____/|_|  \_\ |_|   '
+        echo -e "${NC}"
+        echo -e " 🌟 ${GREEN}A HIT! A PALPABLE HIT!${NC} Your blade severs the temporal bond!"
+        echo " You have successfully SLAIN the lingering spirit of the evil wizard!"
+        echo " The haunting wailing fades. Its essence condenses into treasures..."
+        echo ""
+
+        # 100% 安全留存原版的双宝藏实体物理生成逻辑
+        cat << 'EOF' > treasure
+#!/bin/bash
+if ! grep --quiet --only-matching emerald <<< $I; then
+    cat << eof
+You search the phantom remains and discovered a glowing *emerald*!
+Add it to your inventory bag: export I="\$I,emerald"
+eof
+else
+    echo "This emerald treasure has already been plundered."
+fi
+EOF
+        chmod +x treasure
+
+        cat << 'EOF' > platinum
+#!/bin/bash
+if ! grep --quiet --only-matching platinum <<< $I; then
+    cat << eof
+You discovered an ancient heavy sack full of *platinum* coins!
+Add it to your inventory bag: export I="\$I,platinum"
+eof
+else
+    echo "The platinum sack has already been plundered."
+fi
+EOF
+        chmod +x platinum
+        exit 0
+        
+    # 战况分支 C：被幽灵穿透（吸取生命）
+    else
+        clear
+        echo -e "${RED}"
+        echo '        ____   _    ___ _   _ '
+        echo '       |  _ \ / \  |_ _| \ | |'
+        echo '       | |_) / _ \  | ||  \| |'
+        echo '       |  __/ ___ \ | || |\  |'
+        echo '       |_| /_/   \_\___|_| \_|'
+        echo -e "${NC}"
+        echo -e " ❌ ${RED}SPELL DEFLECTED!${NC}"
+        echo " Your cold steel swings harmlessly through thin, gaseous air."
+        echo -e " The phantom frost passes through your heart, draining ${RED}5 HP${NC}!"
+        echo ""
+        echo -e " ⚠️  DEDUCT 5 FROM YOUR HP VARIABLE AT ONCE:"
+        echo -e "    ${YELLOW}let \"HP=HP-5\"${NC}"
+        echo ""
+
+        # 实时扣除并同步后台数据
+        let HP=HP-5
+        if [ "$HP" -le 0 ]; then
+            clear
+            echo '  ____    _    _   _ _____    ___  _   _ _____ ____  '
+            echo ' / ___|  / \  | \ | | ____|  / _ \| | | | ____|  _ \ '
+            echo '| |  __  / _ \ |  \| |  _|   | | | | | | |  _| | |_) |'
+            echo '| |_| |/ ___ \| |\  | |___  | |_| | \_/ /| |___|  _ < '
+            echo ' \____/_/   \_\_| \_|_____|  \___/ \___/|_____|_| \_\'
+            echo ""
+            echo " You suddenly feel freezing cold, your life force draining completely."
+            echo -e " ${RED}You have been slain by the ghost of the evil arch-mage!${NC}"
+            gameover
+            exit 1
+        fi
+        
+        echo -e -n " 👉 ${RED}PRESS [ENTER] TO RE-STEEL YOUR SOUL AND ATTACK...${NC}"
+        read -s -r
+        roll
+        resolve
+    fi
+}
+
+# ===================== 🎬 【第一幕：厉鬼现身，暴风四起】 =====================
+clear
+echo -e "${PURPLE}"
+echo '                     .-.                             .-. '
+echo '                    ( " )                           ( " )'
+echo '                     \ /                             \ / '
+echo '                  _..---.._                       _..---.._ '
+echo '                 /   \ /   \                     /   \ /   \ '
+echo '                |  /\ | /\  |                   |  /\ | /\  |'
+echo '                 \ \/|\/ / /                     \ \/|\/ / / '
+echo '                  `-----`                         `-----`  '
+echo -e "${NC}"
+echo " The room violently shakes! A sudden freezing gale blasts you from nowhere."
+echo -e " You sense that an ancient, malicious ${PURPLE}PRESENCE${NC} has entered the workshop."
+echo -e " The sudden agonizing chill in your chest assures you: ${RED}YOU ARE UNDER ATTACK!${NC}"
+echo "----------------------------------------------------------------------"
+printf " Do you want to attack this spectral entity? (y/n): "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    roll
+    resolve
+else
+    # 逃跑路线
+    clear
+    echo -e "${YELLOW}🏃 FLEE! SPRINT AWAY FROM THE FREEZING APPARITION!${NC}"
+    echo " You slammed the heavy workshop door shut, escaping back into the nursery."
+    echo -e " Quickly change your location directory to safety: ${CYAN}cd ..${NC}"
+    echo ""
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./ghost
+

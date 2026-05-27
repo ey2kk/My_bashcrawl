@@ -1,0 +1,436 @@
+#!/bin/bash
+# ==========================================
+# 🎮 BASHCRAWL ADVANCED MOD: LIVING STATUE
+# ==========================================
+
+# 1. 引入全局艺术库
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../art.sh" 2>/dev/null
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+gameover () {
+    cat << EOF > corpse
+You see the corpse of a slain adventurer on the floor of the
+dungeon.  You find the following items on the corpse:
+
+$I
+
+EOF
+    curr=`basename $PWD`
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=`basename $PWD`
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+
+# 🎬 【第零幕：如果雕像已经被打碎】
+if [ "$0" = "./pieces" ]; then
+    clear
+    echo -e "${YELLOW}"
+    echo '  _____  _____ ______ _____ ______  _____ '
+    echo ' |  __ \|_   _|  ____/ ____|  ____|/ ____|'
+    echo ' | |__) | | | | |__ | |    | |__  | (___  '
+    echo ' |  ___/  | | |  __|| |    |  __|  \___ \ '
+    echo ' | |     _| |_| |___| |____| |____ ____) |'
+    echo ' |_|    |_____|______\_____|______|_____/ '
+    echo -e "${NC}"
+    echo " You sift through the pieces of a shattered statue."
+    echo " You find nothing of interest in the statue's remains."
+    echo ""
+    exit 1
+fi
+
+# 🎬 【第一幕：步入密室，远古雕像赫然显现】
+clear
+# ===================== 🏛️ 🎬 第一幕：远古圣殿神明重甲雕像（单引号保护，像素级绝对垂直对称） =====================
+echo -e "${PURPLE}"
+echo '                 .---.     '
+echo '                /     \    '
+echo '                \ O O /    '
+echo '              _.-`---`-._  '
+echo '             /   |   |   \ '
+echo '            | -- |---| -- |'
+echo '             \   |   |   / '
+echo '              \  |   |  /  '
+echo '               \ |   | /   '
+echo '                `-----`    '
+echo '               /_______ \  '
+echo '              /__________\ '
+echo '              |          | '
+echo '         _ _ _|_ _ _ _ _ |_ _ _ '
+echo '        /______________________\'
+echo -e "${NC}"
+echo -e " A rugged, ancient stone ${CYAN}STATUE${NC} stands cold in the corner of the room."
+echo ""
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO APPROACH THE COLD STONE...${NC}"
+read -s -r
+clear
+echo -e "${RED}"
+echo '                 ⚠️  🚨 AWAKENING 🚨 ⚠️'
+echo '             .--------------------------------.'
+echo '            /  \   !!! STONE GUARDIAN !!!    /  \'
+echo '           /____\___________________________/____\'
+echo '           |                                     |'
+echo '           |   WHO DARES INTRUDE UPON THE        |'
+echo '           |   CHAMBER OF SPIRITS ???            |'
+echo '           |                                     |'
+echo '           \_____________________________________/'
+echo -e "${NC}"
+echo -e " The statue suddenly ${RED}SPRINGS TO LIFE${NC}, rumbling with seismic wrath!"
+echo -e " It thrusts a giant stone fist straight at your chest!"
+echo ""
+echo -e -n " 👉 ${RED}PRESS [ENTER] TO DEFEND YOURSELF!${NC}"
+read -s -r
+# 计算伤害（原版数值逻辑，保持完整性）
+let "HP=HP-5"
+if [ "$HP" -le 0 ]; then
+    clear
+    echo -e "${RED}"
+    echo '  ____    _    _   _ _____    ___  _   _ _____ ____  '
+    echo ' / ___|  / \  | \ | | ____|  / _ \| | | | ____|  _ \ '
+    echo '| |  _  / _ \ |  \| |  _|   | | | | | | |  _| | |_) |'
+    echo '| |_| |/ ___ \| |\  | |___  | |_| | \_/ /| |___|  _ < '
+    echo ' \____/_/   \_\_| \_|_____|  \___/ \___/|_____|_| \_\'
+    echo -e "${NC}"
+    echo " You have been brutally crushed by the animated statue."
+    echo -e " ${RED}GAME OVER!${NC}"
+    gameover
+    exit 1
+fi
+clear
+echo -e "${YELLOW}======================================================================${NC}"
+echo -e " You barely survived the heavy blow! (HP deducted by 5)"
+echo -e " The monster raises its fist for a second strike."
+echo -e "${YELLOW}======================================================================${NC}"
+echo ""
+printf " ⚔️  Do you have a sword in your inventory? (y/n): "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+   if grep --quiet --only-matching 'sword' <<< $I; then
+       # 成功通关：击碎雕像！
+       clear
+       echo -e "${GREEN}"
+
+       echo -e "${NC}"
+       echo -e " 🌟 ${GREEN}CRITICAL HIT!${NC} You strike the living stone with your magical sword!"
+       echo " The statue cracks open and shatters into thousands of pieces!"
+       echo ""
+       echo " However, the battle left you wounded."
+       echo -e " Please manualy deduct 5 from your HP variable in your terminal: ${YELLOW}let \"HP=HP-5\"${NC}"
+       echo ""
+       echo ' __      _______ _____ _______ ____  _______     __'
+       echo ' \ \    / /_   _/ ____|__   __/ __ \|  __ \ \   / /'
+       echo '  \ \  / /  | || |       | | | |  | | |__) \ \_/ / '
+       echo '   \ \/ /   | || |       | | | |  | |  _  / \   /  '
+       echo '    \  /   _| || |____   | | | |__| | | \ \  | |   '
+       echo '     \/   |_____\_____|  |_|  \____/|_|  \_\ |_|   '
+       # 游戏奖励改写逻辑（原版逻辑）
+       perl -pe 's/coins/diamonds/' -i ./treasure
+       mv statue pieces
+   else
+       # 撒谎惩罚：遭到反噬
+       clear
+       echo -e "${RED}❌ NO YOU DON'T! LIAR!${NC}"
+       echo " The guardian sees through your bluff and counters violently!"
+       echo " You flee in panic, dropping your items in the dark!"
+       rm -f treasure spell
+   fi
+else
+    # 逃跑路线
+    clear
+    echo -e "${YELLOW}🏃 RUN FOR YOUR LIFE!${NC}"
+    echo " You chose not to fight. You turn around and retreat safely,"
+    echo " but the heavy footsteps of the stone giant echo in your nightmares."
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./statue
+

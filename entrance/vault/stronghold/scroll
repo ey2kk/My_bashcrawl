@@ -1,0 +1,93 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（就地声明颜色铁律，3层绝对路径雷达精准校准）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 🎬 第一幕：符文三角魔法阵 + 幻象金杯 + 孤星能量球（100% 轴对称治愈版） =====================
+echo -e "                     ${RED}▲ RUNIC TRIANGLE ▲${NC}"
+echo '                             /\ '
+echo '                            /  \ '
+echo '                           /    \ '
+echo '                          /      \ '
+echo -e "            ${GREEN}(orb1) 🌟${NC}    /        \    ${RED}◯ (orb2)${NC}"
+echo '                        /          \ '
+echo '                       /   .-----.  \ '
+echo -e "                      /   |${YELLOW}GOBLET${NC}|   \   ${BLUE}* Illusory *${NC}"
+echo '                     /     \____/     \ '
+echo '                    /        |         \ '
+echo '                   /      -------       \ '
+echo '                  /                      \ '
+echo -e "        ${RED}(orb3) ◯${NC} /________________________\ "
+echo ''
+
+echo "Before you stands an incomplete arcane structure drawn directly upon the cold stone floor."
+echo -e "You try to grasp the gold goblet, but your fingers pass straight through it like a ${BLUE}ghostly phantom${NC}..."
+echo ""
+echo -e "${PURPLE}----------------------------------------------------------------------${NC}"
+echo ""
+# 🌟 故事分屏交互锚点 1
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO DECIPHER THE MEMORIES OF CAITLYN...${NC}"
+read -s -r
+
+# ===================== 🌌 🎬 第二幕：黑暗低语！四周由密到疏星流 夹击 远古法典记录（彻底修复连环合并截断） =====================
+clear
+echo -e "${PURPLE}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo '  *****    ***   *                                             *   ***    *****  '
+echo '   ***      *                                                       *      ***   '
+echo '                 .----------------------------------------.              '
+echo ' ***  **  *    ./                                          \.    *  **  ***'
+echo '  **   *       |  There is a fine gold goblet at the       |       *   **  '
+echo '   *           |  center of a runic triangle on the floor. |          *   '
+echo '   *           |  You notice a glowing orb1 in one corner. |          *   '
+echo '   *           |  The other points (orb2/3) are empty...   |          *   '
+echo '   *           |  They have been stolen by tomb raiders.   |          *   '
+echo '  **   *       \                                           /       *   **  '
+echo ' ***  **  *     `\                                       /`     *  **  ***'
+echo '                 `----------------------------------------`              '
+echo '   ***      *                                                       *      ***   '
+echo '  *****    ***   *                                             *   ***    *****  '
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo -e "${NC}"
+echo ""
+# 🌟 故事分屏交互锚点 2
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO RECONSTRUCT THE REPLICATION INCANTATION...${NC}"
+read -s -r
+# ===================== 📜 🎬 第三幕：法则觉醒！高亮黄金基础大教程卷轴（cp 复制命令终极附魔） =====================
+clear
+echo -e "${CYAN}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo -e "${NC}"
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  🔮 ${YELLOW}THE LESSONS OF THE SACRED REPLICATION:${NC}             *"
+echo '   *  You remember a spell your magick teacher,               *'
+echo -e "   *  ${GREEN}Caitlyn the Green${NC}, taught you long ago in the woods:    *"
+echo -e "   *  A legendary spell to ${YELLOW}copy and name objects${NC} in space...   *"
+echo '   *                                                          *'
+echo '   *  ------------------------------------------------------  *'
+echo '   *  👉 CAST THE SYSTEM REPLICATION SPELLS RIGHT NOW:        *'
+echo '   *                                                          *'
+echo -e "   *     ${GREEN}cp orb1 orb2${NC}       (Clone first orb to position 2)   *"
+echo -e "   *     ${GREEN}cp orb1 orb3${NC}       (Clone first orb to position 3)   *"
+echo '   *                                                          *'
+echo -e "   *  💡 Then run this ${YELLOW}./goblet${NC} script again for confirmation!  *"
+echo '   *     The physical form will materialize out of the void.  *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+
+# 终章底端粒子闭合线
+echo -e "${CYAN}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo -e "${NC}"
+echo ""

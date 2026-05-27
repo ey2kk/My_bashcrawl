@@ -1,0 +1,337 @@
+#!/bin/bash
+# 1. 自动引入 4 层外的全局艺术库（精准雷达）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../art.sh"
+
+# 🔴 就地附魔声明颜色变量（铁律）
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+if [ -e wizard-dark ]; then
+    # ==================== 状态 A：封印解除！灰色巫师具现化（闪烁登场） ====================
+    clear
+    # 利用单引号神盾绘制气势磅礴的大巫师 ASCII
+    echo -e "${CYAN}"
+    echo '                 .---.      '
+    echo '                /     \     '
+    echo '                \  O  /     '
+    echo '                 `---^`     '
+    echo '               /   |   \    '
+    echo '            O==|  /|\  |==O '
+    echo '               \  /|\  /    '
+    echo '                \_|_|_/     '
+    echo '                 | | |      '
+    echo '                 | | |      '
+    echo '                _|_|_|_     '
+    echo -e "         ${YELLOW}✨ ARNNISEN THE GRAY ✨${NC}"
+    echo ''
+    
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  The ancient wizard, ${YELLOW}Arnnisen the Gray${NC}, takes form        *"
+    echo '   *  before your very eyes.                                  *'
+    echo '   *                                                          *'
+    echo -e "   *  ${GREEN}You have freed him from his eternal slumber!${NC}            *"
+    echo -e "   *  Now he fights by your side against the crawling chaos!  *"
+    echo '   *                                                          *'
+    echo -e "   *  💡 EFFECT: You gain ${GREEN}+2 ATK Bonus${NC} in the Nyarlathotep fight! *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+else
+    # ==================== 状态 B：寂静错觉，封印未解（虚无漩涡） ====================
+    clear
+    echo -e "${BLUE}"
+    echo '                 .  .  .    '
+    echo '               .        .   '
+    echo '              .   ( )    .  '
+    echo '               .        .   '
+    echo '                 .  .  .    '
+    echo -e "           ${RED}* Empty Void *${NC}"
+    echo ''
+    
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo '   *  You feel a strange, lingering presence in the cold air. *'
+    echo '   *  But as you look closer, there is nothing there...       *'
+    echo '   *                                                          *'
+    echo -e "   *  It is probably just your ${YELLOW}imagination${NC}.                   *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+#
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./wizard-light
+#
+# If you're not seeing the * after
+# this file name, you're probably
+# forgetting to use ls -F 
+

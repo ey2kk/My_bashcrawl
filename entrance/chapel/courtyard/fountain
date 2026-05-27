@@ -1,0 +1,126 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（3层绝对路径雷达精准校准，0%出错率）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# 🌟 2. 核心机制升级：洗净并附魔官方核心受伤伤残流函数
+damage() {
+    echo -e "${RED}"
+    echo '               ~  ~  ~  ~  ~ '
+    echo '               ~  B U R N  ~'
+    echo '               ~  P A I N  ~'
+    echo '               ~  ~  ~  ~  ~ '
+    echo -e "${NC}"
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  ${RED}You try to resist the pull, but you simply cannot!${NC}      *"
+    echo '   *  You dip your hand into the swirling waters...           *'
+    echo -e "   *  Suddenly, you feel your skin ${RED}maniacally burning${NC}!     *"
+    echo '   *  The agonizing pain snaps you instantly out of trance.   *'
+    echo '   *                                                          *'
+    echo -e "   *  ⚠️ DEDUCT 2 POINTS FROM YOUR HP VARIABLE AT ONCE:      *"
+    echo -e "   *     ${GREEN}let \"HP=HP-2\"${NC}                                        *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+    echo ""
+}
+
+# 后台雷达悄悄扫描全盘罪孽因果
+CURSE=$(find .. -type f -name ".curse" 2>/dev/null)
+
+# ===================== ⛲ 🎬 第一幕：远古洗罪泉眼现身（单引号保护，绝对垂直对称） =====================
+echo -e "${CYAN}"
+echo '                    .---.     '
+echo '                   (     )    '
+echo '                    \___/     '
+echo '                  .---^---.    '
+echo '                 /         \   '
+echo '                |  ~ ~ ~ ~  |  '
+echo '                |  ~~~~~~~  |  '
+echo '                |___________|  '
+echo '                /           \  '
+echo '               /_____________\ '
+echo -e "         ${BLUE}★ THE FOUNTAIN OF RETRIBUTION ★${NC}"
+echo ''
+
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo '   *  Before you sits an ancient fountain. Its mystical waters*'
+echo '   *  sparkle, undulating softly in the reflection of your gaze.*'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+
+printf "Do you want to approach the sparkling fountain? y/n  "
+read RESP
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    # ===================== 🎬 第二幕分支 A：靠近泉水（实时洗净重组） =====================
+    clear
+    echo "The ancient waters flash intensely as you draw closer..."
+    echo "You feel an overwhelming, hypnotic power drawing you toward the edge."
+    echo "------------------------------------------------------------"
+    
+    if [ -z "$CURSE" ]; then
+        # 😇 纯净之身：触发圣洁轻叹
+        echo -e "${GREEN}"
+        echo '               O  O  O  O  O '
+        echo '               O   PURE    O'
+        echo '               O   SOUL    O'
+        echo '               O  O  O  O  O '
+        echo -e "${NC}"
+        echo '    ************************************************************'
+        echo '   *                                                          *'
+        echo -e "   *  ${GREEN}But you suddenly feel a holy strength to turn away!${NC}    *"
+        echo '   *  You hear a soft, relieved sigh echoing all the way      *'
+        echo '   *  from the forgotten altar in the sacred chapel.          *'
+        echo '   *                                                          *'
+        echo '    ************************************************************'
+        echo ""
+    else
+        # 💀 罪恶之身：触发冥火灼烧
+        damage
+    fi
+else
+    # ===================== 🎬 第二幕分支 B：拒绝靠近（依然进行潜伏变量罪孽追猎） =====================
+    clear
+    if [ ! -z "$CURSE" ]; then
+        echo -e "🛑 ${YELLOW}You refuse to move closer, but the phantom curse trails you!${NC}"
+        echo "------------------------------------------------------------"
+        damage
+    else
+        echo "============================================================"
+        echo -e "🕊️  ${GREEN}You walk away from the pool, your soul remaining intact.${NC}"
+        echo "============================================================"
+        echo ""
+    fi
+fi
+
+# ===================== 💡 第三幕：以血洗罪！后台手撕销毁诅咒核心逻辑（100%安全留存） =====================
+if [ -f ../.curse ] || [ ! -z "$CURSE" ]; then
+    echo "============================================================"
+    echo -e "📢 ${YELLOW}[PURIFICATION]: The fountain absorbs your burning agony...${NC}"
+    echo -e "   ${GREEN}The karmic links are shattered! The .curse has been dissolved!${NC}"
+    echo "============================================================"
+    echo ""
+    # 🔒 誓死捍卫的原版销毁罪孽代码（解密明线）
+    rm -f ../.curse 2>/dev/null
+    find .. -type f -name ".curse" -exec rm -f {} \; 2>/dev/null
+fi
+
+# 教学提示
+echo "You can check your inventory and variables with:"
+echo -e "   👉  ${GREEN}echo \$I && echo \$HP${NC}"
+echo "------------------------------------------------------------"
+echo ""
+
+# 🛡️ 完美的防偷看/防剧透物理遮挡块（0%报错卡死）
+for i in {1..20}; do echo "#"; done
+#

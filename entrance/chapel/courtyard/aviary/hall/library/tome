@@ -1,0 +1,204 @@
+#!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL ADVANCED MOD: THE MAGICAL TOME (PART 1)
+# =======================================================
+
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../../../art.sh" 2>/dev/null
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+gameover () {
+    cat << EOF > corpse
+You see the corpse of a slain adventurer on the floor of the
+dungeon.  You find the following items on the corpse:
+
+${I}
+
+EOF
+    curr=$(basename "$PWD")
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=$(basename "$PWD")
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+
+random_page () {
+    total_spells=6
+    curr_spell=$(( ${RANDOM} % ${total_spells} ))
+    
+    case ${curr_spell} in
+        0)
+            clear
+            echo -e "${CYAN}      ✨ [ SPELL CHRONICLE SPECTRUM / COLOR ENCHANTMENT ] ✨${NC}"
+            echo -e "${CYAN}----------------------------------------------------------------------${NC}"
+            echo -e " 💡 ${YELLOW}View the world in vivid color!${NC}"
+            echo " If you possess a modern, color-capable terminal, you can illuminate"
+            echo " the outputs of the dead 'ls' command into shimmering distinct hues!"
+            echo ""
+            echo " Invoke this incantation in your command line:"
+            echo -e "    👉  ${GREEN}alias ls='ls -F --color=auto'${NC}"
+            echo ""
+            echo " Once cast, rooms (directories), scrolls (text files), and deadly"
+            echo " encounters (executable scripts) will each manifest different colors!"
+            echo -e " For further illumination, consult the ${YELLOW}dircolors${NC} manual:"
+            echo -e "    👉  ${GREEN}man dircolors${NC}  (Press \033[1;31m'q'\033[0m to close the manual parchment)"
+            echo -e "${CYAN}----------------------------------------------------------------------${NC}"
+            echo ""
+            ;;
+        1)
+            clear
+            echo -e "${PURPLE}      ✨ [ STEP PATH CHRONICLES / SPACE ANCHOR TRANSITION ] ✨${NC}"
+            echo -e "${PURPLE}----------------------------------------------------------------------${NC}"
+            echo -e " 💡 ${YELLOW}Keep absolute track of where you have wandered!${NC}"
+            echo " Instead of laboriously dragging your feet with 'cd <room>' and 'cd ..',"
+            echo " you can stack the memory of rooms using the ancient spells of"
+            echo -e " ${GREEN}pushd${NC} and ${GREEN}popd${NC}."
+            echo ""
+            echo -e "    * ${CYAN}pushd <room>${NC} ➔ Pushes the target room onto your memory stack."
+            echo -e "    * ${CYAN}dirs${NC}         ➔ Reveals your current chronological room stack."
+            echo -e "    * ${CYAN}popd${NC}         ➔ Pops the top room and instantly teleports you back!"
+            echo ""
+            echo " This LIFO (Last In, First Out) data structure allows you to dive deep into"
+            echo " the darkest cellars, then snap back to safety with a single word."
+            echo -e "${PURPLE}----------------------------------------------------------------------${NC}"
+            echo ""
+            ;;
+        2)
+            clear
+            [ -f ../monster ] && monster="monster" || monster="carcass"
+            echo -e "${GREEN}      ✨ [ OVERLORD MAP ILLUSION / RADAR SURVEY VISION ] ✨${NC}"
+            echo -e "${GREEN}----------------------------------------------------------------------${NC}"
+            echo -e " 💡 ${YELLOW}Map the architecture of the entire dungeon!${NC}"
+            echo " You can tear through the darkness and reveal the complete layouts"
+            echo -e " of nearby chambers using the omniscient ${GREEN}tree${NC} spell."
+            echo ""
+            echo " Try casting this command right here from the silent library:"
+            echo -e "    👉  ${GREEN}tree -F ..${NC}"
+            echo ""
+            echo " The echo of the layout will manifest before your eyes:"
+            echo -e "    ${BLUE}..${NC}"
+            echo -e "    ├── ${BLUE}library/${NC}"
+            echo "    │   ├── scroll"
+            echo "    │   └── tome*"
+            echo -e "    └── ${RED}${monster}*${NC}  ➔ (Shows your current combat progress!)"
+            echo -e "${GREEN}----------------------------------------------------------------------${NC}"
+            echo ""
+            ;;
+        3)
+            clear
+            echo -e "${YELLOW}      ✨ [ EMACS MIND CONDUIT / SHORTCUT VELOCITY FLOW ] ✨${NC}"
+            echo -e "${YELLOW}----------------------------------------------------------------------${NC}"
+            echo -e " 💡 ${YELLOW}Navigate the command prompt line like a pro arch-mage!${NC}"
+            echo " Accelerate your cursor movements faster than arrow keys alone."
+            echo " Ensure this mental link is active by whispering:"
+            echo -e "    👉  ${GREEN}set -o emacs${NC}"
+            echo ""
+            echo -e " 🔥 ${CYAN}THE ANCIENT COMBINATION CHORDS:${NC}"
+            echo -e "    - ${YELLOW}Ctrl-a${NC} : Instantly teleport cursor to the START of the line."
+            echo -e "    - ${YELLOW}Ctrl-e${NC} : Instantly teleport cursor to the END of the line."
+            echo -e "    - ${YELLOW}Alt-b${NC}  : Dash BACKWARD by one full word."
+            echo -e "    - ${YELLOW}Alt-f${NC}  : Dash FORWARD by one full word."
+            echo -e "    - ${YELLOW}Ctrl-u${NC} : Obliterate and CUT everything from cursor to start."
+            echo -e "    - ${YELLOW}Ctrl-k${NC} : Obliterate and CUT everything from cursor to end."
+            echo -e "    - ${YELLOW}Ctrl-y${NC} : PASTE the text you just cut with the spells above."
+            echo -e "${YELLOW}----------------------------------------------------------------------${NC}"
+            echo ""
+            ;;
+        4)
+            clear
+            echo -e "${BLUE}      ✨ [ TMUX CHRONO MULTIPLEXER / PERSISTENT SESSION PERSISTENCE ] ✨${NC}"
+            echo -e "${BLUE}----------------------------------------------------------------------${NC}"
+            echo -e " 💡 ${YELLOW}Summon persistent clones of your terminal shell!${NC}"
+            echo " The multiplexer allows you to manage sessions, windows, and split"
+            echo " panes, keeping them alive even if you sever your connection!"
+            echo ""
+            echo " Manifest a new named sanctuary session by typing:"
+            echo -e "    👉  ${GREEN}tmux new-session -s <session_name>${NC}"
+            echo ""
+            echo -e " 🔥 ${CYAN}THE HAND SIGNS OF THE MULTIPLEXER (Prefix: Ctrl-b):${NC}"
+            echo -e "    - Split your screen vertically   ➔  ${YELLOW}Ctrl-b${NC} then ${YELLOW}%${NC}"
+            echo -e "    - Split your screen horizontally ➔  ${YELLOW}Ctrl-b${NC} then ${YELLOW}\"${NC}"
+            echo -e "    - Detach safely from session     ➔  ${YELLOW}Ctrl-b${NC} then ${YELLOW}d${NC}"
+            echo ""
+            echo -e " You can re-attach to your persistent work later from anywhere via:"
+            echo -e "    👉  ${GREEN}tmux attach -t <session_name>${NC}"
+            echo -e "${BLUE}----------------------------------------------------------------------${NC}"
+            echo ""
+            ;;
+        5)
+            clear
+            echo -e "${CYAN}      ✨ [ FOR-LOOP CASCADE / CASCADE ITERATION SPELL ] ✨${NC}"
+            echo -e "${CYAN}----------------------------------------------------------------------${NC}"
+            echo -e " 💡 ${YELLOW}Master brace expansions and automated for-loops!${NC}"
+            echo " Instead of laboriously running a ritual 100 times for 100 files"
+            echo " (e.g., compressing file00 through file99), you can bind them"
+            echo " instantly into a single localized storm."
+            echo ""
+            echo -e " ⚡ ${YELLOW}The Swift Brace Expansion Spell:${NC}"
+            echo -e "    👉  ${GREEN}gzip file{00..99}${NC}"
+            echo ""
+            echo -e " ⚡ ${YELLOW}The Standard Cascading Loop:${NC}"
+            echo -e "    👉  ${GREEN}for i in {00..99}; do gzip file\${i}; done${NC}"
+            echo ""
+            echo -e " ⚡ ${YELLOW}The Wildcard Tracker Loop:${NC}"
+            echo -e "    👉  ${GREEN}for file in file*; do gzip \${file}; done${NC}"
+            echo " All of the above incantations achieve the exact same automated result!"
+            echo -e "${CYAN}----------------------------------------------------------------------${NC}"
+            echo ""
+            ;;
+    esac
+}
+
+clear
+echo -e "${YELLOW}"
+echo '                 .-----------------------------------.'
+echo '                /  \                                 \ '
+echo '               /____\     ______________________      \ '
+echo '               |    |    /                      \     |'
+echo '               |    |   |   ANCIENT SPELLBOOK    |    |'
+echo '               |    |   |      OF THE WIZARD     |    |'
+echo '               |    |    \______________________/     |'
+echo '               |    |                                 |'
+echo '               \____/_________________________________/'
+echo -e "${NC}"
+echo " You discover a massive, ancient tome resting heavily on the dust-laden table."
+echo " It is left wide open to a glowing page right in the middle..."
+echo ""
+printf " Do you dare to read the encrypted contents? (y/n): "
+read RESP
+
+if [ "${RESP}" = "y" -o "${RESP}" = "Y" ]; then
+    clear
+    echo -e " ${YELLOW}The tome trembles. Wisps of mana smoke rise from the ancient parchment...${NC}"
+    echo " Flipping to a random mystical page..."
+    echo " ----------------------------------------------------------------------"
+    
+    while [ "${RESP}" = 'y' -o "${RESP}" = 'Y' ]; do
+        random_page
+        printf " 📖 Do you want to whisper another incantation and turn the page? (y/n): "
+        read RESP
+    done
+    clear
+    echo " You gently close the massive tome. The glowing glyphs fade into sleep."
+    echo " The room falls dead silent once more."
+    echo " ----------------------------------------------------------------------"
+    echo ""
+else
+    clear
+    echo " You cautiously choose not to disturb the ancient binding."
+    echo " The secrets remain locked inside the dead letters."
+    echo " ----------------------------------------------------------------------"
+    echo ""
+fi
+
+exit 0

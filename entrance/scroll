@@ -1,0 +1,35 @@
+#!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL LEGACY ACCENT: YELLOW HISTORICAL SCROLL
+# =======================================================
+
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
+clear
+
+# 物理层纯文本包装，防止 Bash 误将文本识别为命令导致卡死崩溃
+echo -e "${YELLOW}"
+cat << 'EOF'
+   ************************************************************
+   *           It is pitch black in these catacombs.          *
+   * You have a magickal spell that lists all items in a room.*
+   *                                                          *
+   *      To see in the dark, type:     ls                    *
+   *      To move around, type:         cd <directory>        *
+   *                                                          *
+   *             Try looking around this room.                *
+   *         Then move into one of the next rooms.            *
+   *                                                          *
+   *      EXAMPLE:                                            *
+   *                                                          *
+   *                $ ls                                      *
+   *                $ cd cellar                               *
+   *                                                          *
+   * Remember to cast ``ls`` when you get into the next room! *
+   ************************************************************
+EOF
+echo -e "${NC}"
+
+# 自然退出脚本，将控制权无缝交还给主游戏终端，拒绝卡死在 bash-5.1
+exit 0

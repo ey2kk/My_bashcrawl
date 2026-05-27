@@ -1,0 +1,157 @@
+#!/bin/bash
+# =======================================================
+# 🎮 SPIRE ELEVATOR CONTROLLER: HIGH-TECH MOD (CLEANED)
+# =======================================================
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+floors=666
+
+# 🎬 【倒计时：高空矩阵极速速降动画】
+countdown () {
+    var="${floors}"
+    len="${#var}"
+    echo -n "$var"
+    
+    # 💡 算术优化：全面升级为极其稳固的现代 (( expr )) 运算
+    (( m = var - 1 ))
+    
+    # 💡 别名纠错：彻底拔除老旧反引号，改用 $(seq ...)
+    for t in $(seq "${m}" -1 1); do
+        sleep 0.1
+        for _ in $(seq "${len}" -1 1); do
+            # 💡 计数器优化：使用下划线 '_' 代替未使用变量 i，彻底平息 ShellCheck 警告
+            echo -ne '\b'
+        done
+        
+        if [ "${len}" -gt "${#t}" ]; then
+            (( l = len - 1 ))
+            for _ in $(seq "${l}" -1 "${#t}"); do
+                echo -n '0'
+            done
+        fi
+        # 💡 边界加固：每一个输出变量全部套上双引号保护，防范排版炸裂
+        echo -n "$t"
+    done
+}
+
+# 🎬 【正计数：逆天反重力飞升动画】
+countup () {
+    var="${floors}"
+    for t in $(seq 1 "${var}"); do
+        sleep 0.1
+        len="${#t}"
+        for _ in $(seq 1 "${#var}"); do
+            echo -ne '\b'
+        done
+        
+        if [ "${len}" -lt "${#var}" ]; then
+            (( n = ${#var} - len ))
+            for _ in $(seq 1 "${n}"); do
+                echo -ne '0'
+            done
+        fi
+        echo -n "$t"
+    done
+}
+
+# ===================== 🚀 🎬 主控室：双向引力波移动逻辑判定 =====================
+if grep --quiet UP .direction 2>/dev/null; then
+    # 🎬 【飞升线世界观暴发】
+    clear
+    echo -e "${YELLOW}"
+    echo '      ⚡  ⚡  ⚡  ELEVATOR ENGINE INITIALIZED  ⚡  ⚡  ⚡'
+    echo '             .--------------------------------.'
+    echo '            /  \   [ SYSTEM CONFIGURATION ]  /  \'
+    echo '           /____\___________________________/____\'
+    echo '           |                                     |'
+    echo '           |    HYPER-THRUST ENGINE: ONLINE     |'
+    echo '           |    HYPNOTIC GRAVITY SECTOR: FULL    |'
+    echo '           |                                     |'
+    echo '           \_____________________________________/'
+    echo -e "${NC}"
+    echo " You hear a slight whirring, and feel a heaviness at your feet,"
+    echo -e " accompanied by a vague, ${PURPLE}disquieting sense of cosmic motion${NC}."
+    echo ""
+    echo -e " ${CYAN}A holographic magical screen flickers online:${NC}"
+    echo -n " [ FLOOR LOCATION ]: "
+    
+    # 执行无损重构的高能计数动画
+    countup
+    
+    # 🎬 【舱门开启：接驳卫星空间】
+    echo ""
+    echo -e "\n------------------------------------------------------------"
+    echo -e " ✨ ${GREEN}THE ENGINE HALTS. DESTINATION REACHED.${NC}"
+    echo " The heavy iron doors slide open, revealing nothing but total darkness beyond."
+    echo "------------------------------------------------------------"
+    echo ""
+
+    # 🔒 誓死捍卫的原版核心后台运行逻辑（不因动画美化而漏掉任何一个 &）
+    echo "DOWN" > .direction
+    ln -sf .satellite door && \
+        sleep 10 && \
+        echo -e "\n ⚠️ ${RED}[NOTICE]: The elevator doors slide closed with a heavy thud.${NC}\n" && \
+        rm door &>/dev/null && \
+    echo "DOWN" > .direction &
+    echo
+else
+    # 🎬 【降落线世界观暴发】
+    clear
+    echo -e "${BLUE}"
+    echo '      💥  💥  💥  DE-ACCELERATION TRIGGERED  💥  💥  💥'
+    echo '             .--------------------------------.'
+    echo '            /  \   [ GRAVITY DROP DETECTED ] /  \'
+    echo '           /____\___________________________/____\'
+    echo '           |                                     |'
+    echo '           |    KINETIC REVERSE BREAK: ACTIVE    |'
+    echo '           |    DESCENT VECTOR INDEX   : SECURE  |'
+    echo '           |                                     |'
+    echo '           \_____________________________________/'
+    echo -e "${NC}"
+    echo " You hear a slight whirring, and feel a lightness at your feet,"
+    echo -e " accompanied by a vague, ${PURPLE}disquieting sense of deep falling motion${NC}."
+    echo ""
+    echo -e " ${CYAN}A holographic magical screen flickers online:${NC}"
+    echo -n " [ FLOOR LOCATION ]: "
+    
+    # 执行无损重构的高能倒计动画
+    countdown
+    
+    # 🎬 【舱门开启：倒回高塔中层】
+    echo ""
+    echo -e "\n------------------------------------------------------------"
+    echo -e " ✨ ${GREEN}THE ENGINE HALTS. LEVEL GROUND SECURED.${NC}"
+    echo " The heavy iron doors slide open, revealing nothing but total darkness beyond."
+    echo "------------------------------------------------------------"
+    echo ""
+    
+    # 🔒 誓死捍卫的原版核心后台运行逻辑
+    echo "UP" > .direction &
+    sleep 10 && \
+        ln -sf .. door && \
+        echo -e "\n ⚠️ ${RED}[NOTICE]: The elevator doors slide closed with a heavy thud.${NC}\n" && \
+        rm door &>/dev/null &
+    echo
+fi
+
+# 🎬 【终章：教科书级尾部知识指南原味回归】
+echo "------------------------------------------------------------"
+echo " Remember, when files end in a *"
+echo " it means they are active binary applications."
+echo " Try casting this spell next time to re-engage the elevator:"
+echo -e "    👉  ${GREEN}./display${NC}"
+echo ""
+echo " If you are not seeing the * after this file name,"
+echo " you are probably forgetting the sacred laws of the directory classifier:"
+echo -e "    👉  ${YELLOW}ls -F${NC}"
+echo "------------------------------------------------------------"
+echo ""
+
+exit 0

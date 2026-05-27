@@ -1,0 +1,48 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（就地声明颜色铁律，杜绝环境丢失）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 巨型高耸回廊死胡同铁栅栏（单引号保护，100% 绝对垂直对称） =====================
+echo -e "${CYAN}"
+echo '             ||    ||    ||    ||    || '
+echo '             ||    ||    ||    ||    || '
+echo '             ||    ||    ||    ||    || '
+echo '             ||    ||    ||    ||    || '
+echo '             |*====*====*====*====*---| '
+echo '             ||    ||    ||    ||    || '
+echo '             ||    ||    ||    ||    || '
+echo '             ||    ||    ||    ||    || '
+echo '             ||    ||    ||    ||    || '
+echo '             |*====*====*====*====*---| '
+echo '             ||    ||    ||    ||    || '
+echo '             ||    ||    ||    ||    || '
+echo -e "         ${RED}[ ⛔ DEAD END: THE PATH IS BLOCKED ]${CYAN}"
+echo '            \____________________________/'
+echo -e "${NC}"
+
+# ===================== 剧情文本与核心教学画卷（像素级对齐高亮卷轴） =====================
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  You seem to have reached the ${RED}absolute end${NC} of this hall. *"
+echo '   *                                                          *'
+echo -e "   *  ${YELLOW}Turn back now${NC} and try another dark path.                *"
+echo '   *                                                          *'
+echo -e "   *  💡 Remember, to backtrack one directory, you type:      *"
+echo -e "   *     ${GREEN}cd ..${NC}                                                 *"
+echo '   *                                                          *'
+echo '   *  If you are drawing a map of your progress, you can      *'
+echo '   *  always get the name of your working directory with:     *'
+echo -e "   *     ${GREEN}pwd${NC}                                                   *"
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''

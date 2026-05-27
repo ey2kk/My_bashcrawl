@@ -1,0 +1,49 @@
+#!/bin/bash
+# 1. 自动引入 3 层外的全局艺术库（精准雷达）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+# 🔴 就地附魔声明颜色变量（铁律）
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+clear
+
+# ===================== 分段安全渲染：亮黄竞技场外墙 夹击 暗紫深坑大门 =====================
+echo -e "${YELLOW} .::|  T H E   A R E N A   O F  |::."
+echo -e " .::||  N Y A R L A T H O T E P  ||::."
+echo -e "-------------------------------------"
+echo -e " | /                             \\\\ |"
+echo -e " | |                             | |"
+echo -e " |||                             |||"
+echo -e " |||                             |||${NC}"
+
+# --- 核心大门：采用 echo -n 分段复印法，彻底根除转义乱码 ---
+echo -e -n "${YELLOW} |||     ${PURPLE}" ; echo -n '___________________' ; echo -e "${YELLOW}     |||"
+echo -e -n " |||    ${PURPLE}"  ; echo -n '/                   \' ; echo -e "${YELLOW}    |||"
+echo -e -n " |||   ${PURPLE}"   ; echo -n '/    [ DOWN TO PIT ]  \' ; echo -e "${YELLOW}   |||"
+echo -e -n " |||  ${PURPLE}"    ; echo -n '/_______________________\' ; echo -e "${YELLOW}  |||"
+echo -e -n " |||  ${PURPLE}"    ; echo -n '|                       |' ; echo -e "${YELLOW}  |||"
+echo -e -n " |||  ${PURPLE}"    ; echo -n '|  ( )     ( )     ( )  |' ; echo -e "${YELLOW}  |||"
+echo -e -n " |||  ${PURPLE}"    ; echo -n '|_______________________|' ; echo -e "${YELLOW}  |||${NC}"
+
+echo -e "${YELLOW} |||/                     \\\\|||"
+echo -e "-------------------------------------${NC}"
+echo ''
+
+# ===================== 完美的英文剧情画卷 =====================
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo '   *  You have entered an ancient arena, probably used for    *'
+echo -e "   *  worship. And \"worship\", in this dangerous realm,       *"
+echo -e "   *  usually means ${RED}BLOOD SPORT${NC}.                               *"
+echo '   *                                                          *'
+echo -e "   *  There is a gaping ${PURPLE}gaping pit${NC} in the center of the arena. *"
+echo '   *                                                          *'
+echo -e "   *  If you remember how to summon a ${GREEN}potion${NC},                  *"
+echo '   *  this might be a good time to do it...                   *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''

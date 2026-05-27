@@ -1,0 +1,320 @@
+#!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL ADVANCED MOD: THE CYBERNETIC BOX (LEGACY-TOUCH)
+# =======================================================
+
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../art.sh" 2>/dev/null
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 📺 FIRST ACT: THE GLOWING MAINFRAME =====================
+echo -e "${YELLOW}           _________________________________________"
+echo '          /                                         \'
+echo -e "         |  ${GREEN}_______________________________________${YELLOW}  |"
+echo -e "         | |                                       | |"
+echo -e "         | |  ${CYAN}[*] POSIX TERMINAL DETECTED...${GREEN}       | |"
+echo -e "         | |  ${CYAN}Status: Illuminated From Within${GREEN}      | |"
+echo -e "         | |                                       | |"
+echo -e "         | |  ${RED}Writing is glowing on the screen...${GREEN}  | |"
+echo -e "         | |_______________________________________| |"
+echo '         |___________________________________________|'
+echo '                   \_/                   \_/'
+echo -e "${NC}"
+
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo '   *  A strange metal box sits heavy upon the dusty ground.   *'
+echo '   *  It appears to be actively illuminated from within.      *'
+echo '   *                                                          *'
+echo '   *  There is a smooth glass window built into the box.      *'
+echo '   *  The window is black, but there is luminescent writing.  *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+
+printf " Do you want to read the glowing writing? (y/n): "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    clear
+    # ===================== 📺 SECOND ACT: SIMULATED LOGIN PROMPT =====================
+    echo -e "${GREEN}"
+    echo '       .----------------------------------------.'
+    echo '       |           WELCOME TO POSIX             |'
+    echo '       |                                        |'
+    echo '       |  💡 PRO TIP FOR APPRENTICE WIZARDS:    |'
+    echo -e "       |     To pass the automated firewall,    |"
+    echo -e "       |     you must enter your precise        |"
+    echo -e "       |     Linux active environment username. |"
+    echo '       |                                        |'
+    echo '       \----------------------------------------/'
+    echo -e "${NC}"
+    
+    printf " Enter your username: "
+    read RESP
+
+    if [ "$RESP" = "$USER" ]; then
+        clear
+        echo -e "${GREEN}==================================================${NC}"
+        echo -e " 🔓 ACCESS GRANTED! Login Successful as $USER."
+        echo -e "==================================================${NC}"
+        echo ""
+        echo " A hidden compartment in the metal box slides open with a hiss..."
+        echo -e " Inside, you discover a set of glittering ${YELLOW}Magickal Armour${NC}!"
+        echo ""
+
+        # 🌟 核心包围圈：把 touch 锁进 armour 的代码内部
+        cat << 'EOF' > armour
+#!/bin/bash
+YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+echo -e "${CYAN}"
+echo '             .---.      '
+echo '            /_____\     '
+echo '             |o o|      '
+echo '             \___/      '
+echo '            /  |  \     '
+echo '           /|  |  |\\    '
+echo '          //|__|__|\\\\   '
+echo '            |  |  |     '
+echo '            |  |  |     '
+echo '            |__|__|     '
+echo -e "${NC}"
+
+if ! grep --quiet --only-matching 'armour' <<< $I; then
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  Welcome to your POSIX system.                           *"
+    echo '   *  You have learnt much, and now you have the basic        *'
+    echo '   *  knowledge you need to become a truly powerful wizard.   *'
+    echo '   *                                                          *'
+    echo -e "   *  You equip the ${YELLOW}*magickal armour*${NC}!                         *"
+    echo '   *  Your defense surges with cosmic protection.             *'
+    echo '   *                                                          *'
+    echo -e "   *  Add this item to your inventory:                        *"
+    echo -e "   *     ${GREEN}export I=\"armour,\$I\"${NC}                                  *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+    
+    # 🔒 【完美复原原厂规则】：只有运行 ./armour 时，这两个隐藏文件才会被物理创建
+    touch .armour
+    touch .bless
+else
+    echo "=================================================="
+    echo -e "${YELLOW} This epic armour has already been claimed.${NC}"
+    echo "=================================================="
+fi
+EOF
+        chmod +x armour
+        
+        echo -e " 💡 A new executable file ${YELLOW}./armour${NC} has appeared in this room!"
+        echo -e "    Type ${GREEN}./armour${NC} to inspect and equip your new protection."
+        echo "=================================================="
+    else
+        echo -e "\n 🛑 ${RED}ACCESS DENIED: Invalid Username. The screen flickers off...${NC}\n"
+    fi
+else
+    echo -e "\n You decide to walk away from the humming machine.\n"
+fi
+exit 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+#
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./box
+#
+# If you're not seeing the * after
+# this file name, you're probably
+# forgetting to use ls -F 
+

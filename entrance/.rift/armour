@@ -1,0 +1,43 @@
+#!/bin/bash
+YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+echo -e "${CYAN}"
+echo '             .---.      '
+echo '            /_____\     '
+echo '             |o o|      '
+echo '             \___/      '
+echo '            /  |  \     '
+echo '           /|  |  |\\    '
+echo '          //|__|__|\\\\   '
+echo '            |  |  |     '
+echo '            |  |  |     '
+echo '            |__|__|     '
+echo -e "${NC}"
+
+if ! grep --quiet --only-matching 'armour' <<< $I; then
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  Welcome to your POSIX system.                           *"
+    echo '   *  You have learnt much, and now you have the basic        *'
+    echo '   *  knowledge you need to become a truly powerful wizard.   *'
+    echo '   *                                                          *'
+    echo -e "   *  You equip the ${YELLOW}*magickal armour*${NC}!                         *"
+    echo '   *  Your defense surges with cosmic protection.             *'
+    echo '   *                                                          *'
+    echo -e "   *  Add this item to your inventory:                        *"
+    echo -e "   *     ${GREEN}export I=\"armour,\$I\"${NC}                                  *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+    
+    # 🔒 【完美复原原厂规则】：只有运行 ./armour 时，这两个隐藏文件才会被物理创建
+    touch .armour
+    touch .bless
+else
+    echo "=================================================="
+    echo -e "${YELLOW} This epic armour has already been claimed.${NC}"
+    echo "=================================================="
+fi

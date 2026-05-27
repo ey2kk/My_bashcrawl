@@ -1,0 +1,89 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../art.sh" 2>/dev/null
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 🧱 🎬 第一幕：远古开裂巨石墙阻断 =====================
+echo -e "${PURPLE}"
+echo "         _____________________________________________________ "
+echo "        |  ______  |  ______  |  ______  |  ______  |  ______  |"
+echo "        | |      | | |      | | |      | | |      | | |      | |"
+echo "        | |______|_| |______|_| |______|_| |______|_| |______|_|"
+echo "        |______  |______  |______  |______  |______  |______   |"
+echo "        |      | |      | |      | |      | |      | |      |  |"
+echo "        |______|_|______|_|______|_|______|_|______|_|______|_|"
+echo "        |  [           ANCIENT CRACKED STONE WALL           ]  |"
+echo "        |______________________________________________________|"
+echo -e "${NC}"
+
+echo "You stop dead in your tracks. There is ancient writing upon the wall."
+echo "It is written in the common language of this dark land..."
+echo -e "But it appears to be freshly, ${RED}viscously inscribed in crimson blood${NC}:"
+echo ""
+echo -e "${PURPLE}----------------------------------------------------------------------${NC}"
+echo ""
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO DECIPHER THE BLOOD WRITING...${NC}"
+read -s -r
+
+# ===================== 🩸 🎬 第二幕：血字暴燃！ =====================
+clear
+echo -e "${PURPLE}"
+echo " *******  ****  **  *                                         *  **  ****  ******* "
+echo "  *****    ***   *                                             *   ***    *****  "
+echo "   ***      *                                                       *      ***   "
+echo "                 .------------------------------------------.              "
+echo " ***  **  *    ./                                            \.    *  **  ***"
+echo "  **   *      /       ████████╗██╗   ██╗██████╗ ███╗   ██╗     \       *   **  "
+echo "   *         |        ╚══██╔══╝██║   ██║██╔══██╗████╗  ██║       |          *   "
+echo -e "   *         |           ${RED}██║   ██║   ██║██████╔╝██╔██╗ ██║${PURPLE}       |          *   "
+echo -e "   *         |           ${RED}██║   ██║   ██║██╔══██╗██║╚██╗██║${PURPLE}       |          *   "
+echo -e "   *         |           ${RED}██║   ╚██████╔╝██║  ██║██║ ╚████║${PURPLE}       |          *   "
+echo "   *         |           ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝       |          *   "
+echo "   *          \                                                 /           *   "
+echo "  **   *       \      ██████╗  █████╗  ██████╗██╗  ██╗         /        *   **  "
+echo " ***  **  *     \`\    ██╔══██╗██╔══██╗██╔════╝██║  ██║       /\`     *  **  ***"
+echo -e "                 |    ${RED}██████╔╝███████║██║     ███████║${PURPLE}       |              "
+echo -e "                 |    ${RED}██╔══██╗██╔══██║██║     ██╔══██║${PURPLE}       |              "
+echo -e "                 |    ${RED}██████╔╝██║  ██║╚██████╗██║  ██║${PURPLE}       |              "
+echo "                 |    ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝       |              "
+echo "                 \`----------------------------------------\`              "
+echo "   ***      *                                                       *      ***   "
+echo "  *****    ***   *                                             *   ***    *****  "
+echo " *******  ****  **  *                                         *  **  ****  ******* "
+echo -e "${NC}"
+echo ""
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO UNLOCK THE TIME-REVERSAL INCANTATION...${NC}"
+read -s -r
+
+# ===================== 📜 🎬 第三幕：法术觉醒！ =====================
+clear
+echo -e "${CYAN}"
+echo " *******  ****  **  *                                         *  **  ****  ******* "
+echo -e "${NC}"
+echo "    ************************************************************"
+echo "   *                                                          *"
+echo -e "   *  💡 ${YELLOW}ARCH-MAGE ADVICE ON TIME CHRONICLES:${NC}                 *"
+echo "   *  Speaking of turning back and defying past mistakes...   *"
+echo "   *                                                          *"
+echo -e "   *  You can instantly re-use any of your previous commands  *"
+echo -e "   *  by simply pressing the ${YELLOW}[UP]${NC} and ${YELLOW}[DOWN]${NC} arrow keys    *"
+echo "   *  on your keyboard to fluidly scroll through history!     *"
+echo "   *                                                          *"
+echo -e "   *  👉 ${GREEN}TRY IT OUT RIGHT NOW AS SOON AS YOU LEAVE!${NC}           *"
+echo "   *     Summon your past path spells with a single click.    *"
+echo "   *                                                          *"
+echo "    ************************************************************"
+echo ""
+echo -e "${CYAN}"
+echo " *******  ****  **  *                                         *  **  ****  ******* "
+echo -e "${NC}"
+echo ""

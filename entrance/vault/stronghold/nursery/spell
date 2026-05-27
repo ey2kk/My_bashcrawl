@@ -1,0 +1,379 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（就地声明颜色铁律，3层绝对路径雷达精准校准）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 🧪 🎬 核心机制分流：检测药水文件是否齐聚（100%继承官方解密机制） =====================
+if [[ -e potion ]]; then
+    
+    # 🌟 状态 A：召唤成功！药水瓶内绿液翻滚、气泡“咕嘟咕嘟”向上升腾，爆发出 3D 治愈极光
+    for frame in {1..3}; do
+        clear
+        echo -e "${CYAN} *******  ****  **  *                                         *  **  ****  ******* "
+        echo "  *****    ***   *             POTION SUMMONED FROM AFAR       *   ***    *****  "
+        echo -e "   ***      *                                                       *      ***   ${NC}"
+        echo -e "${CYAN}                 .-----.      "
+        echo "                 |     |      "
+        echo "                .-\`---\`-.     "
+        echo "               /         \\    "
+        if [ "$frame" -eq 1 ] || [ -z "$frame" ]; then
+            echo -e "              |  ${GREEN}. . . .${CYAN}  |   "
+            echo -e "              |  ${GREEN}~~~~~~~${CYAN}  |   "
+        elif [ "$frame" -eq 2 ]; then
+            echo -e "              |  ${GREEN} o o o ${CYAN}  |   "
+            echo -e "              |  ${GREEN}~~~~~~~${CYAN}  |   "
+        else
+            echo -e "              |  ${GREEN}* * * *${CYAN}  |   "
+            echo -e "              |  ${GREEN}~~~~~~~${CYAN}  |   "
+        fi
+        echo "               \\_________/      "
+        echo -e " *******  ****  **  *                                         *  **  ****  ******* ${NC}"
+        echo ""
+        sleep 0.25
+    done
+
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  🎉 ${GREEN}SUCCESS! The spatial ripple stabilizes perfectly!${NC}     *"
+    echo -e "   *  You have successfully ${YELLOW}summoned a healing potion${NC} from afar! *"
+    echo '   *  You pop the cork and drink it down quickly...           *'
+    echo '   *                                                          *'
+    echo -e "   *  ⚡  You feel a massive ${GREEN}SURGE OF STRENGTH${NC} in your blood!   *"
+    echo -e "   *     Add ${YELLOW}5 HP${NC} directly to your score variable!            *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+    echo ''
+    
+    # 强制卡住画面，供预览享受
+    sleep 2.5
+    exit
+else
+    # 🌟 状态 B：召唤失败！魔法书页躺在地上，跳出 3D 德鲁伊古老法典大浮雕
+    echo -e "${PURPLE}"
+    echo '                     .--------------------------.               '
+    echo '                    /|   ____________________   |\              '
+    echo '                   / |  |                    |  | \             '
+    echo '                  /  |  |    DRUID INCANT    |  |  \            '
+    echo '                 /   |  |     TOME BOOK      |  |   \           '
+    echo '                |    |  |    ============    |  |    |          '
+    echo '                |    |  |    [ (  ⚛  ) ]     |  |    |          '
+    echo '                |    |  |____________________|  |    |          '
+    echo '                 \   |/________________________\|   /           '
+    echo '                  \________________________________/            '
+    echo -e "${NC}"
+    echo '    ************************************************************'
+    echo '   *                                                          *'
+    echo -e "   *  A torn page from a ${PURPLE}druid's tome of incantations${NC} lies    *"
+    echo '   *  weathered upon the stone ground.                        *'
+    echo '   *  It whispers the long-lost secret of how to summon       *'
+    echo -e "   *  a powerful, life-saving ${GREEN}HEALING POTION${NC}!                 *"
+    echo '   *                                                          *'
+    echo '    ************************************************************'
+    echo ''
+fi
+# ===================== 📜 🎬 第二幕：回车故事流递进（彻底清洗 cat << EOF 截断卡死大巨坑） =====================
+# 🌟 故事分屏交互锚点
+echo -e "${PURPLE}----------------------------------------------------------------------${NC}"
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO DECIPHER THE DRUID SPELL INSTRUCTIONS...${NC}"
+read -s -r
+
+clear
+echo -e "${CYAN}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo -e "${NC}"
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  🔮 ${YELLOW}THE INCANTATION OF GLOBAL RADAR REVEALED:${NC}              *"
+echo '   *                                                          *'
+echo -e "   *  To FIND any hidden file on your system, use the ${GREEN}find${NC}    *"
+echo '   *  command. For example, to search this current room:      *'
+echo '   *                                                          *'
+echo -e "   *     👉  ${GREEN}find . -name \"potion\"${NC}                             *"
+echo '   *                                                          *'
+echo '   *  Once you have located a potion, copy it to this room    *'
+echo '   *  and run this spell script again for confirmation.       *'
+echo '   *                                                          *'
+echo -e "   *  ⚠️  There are ${RED}NO potions${NC} inside this room right now.    *"
+echo '   *     But try searching starting back at the entrance!     *'
+echo '   *                                                          *'
+echo -e "   *  💡 Hint: Use ${GREEN}\`pwd\`${NC} to determine how many rooms are     *"
+echo '   *     currently between you and the deep dungeon entrance. *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+
+# 终章底端粒子闭合线
+echo -e "${CYAN}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo -e "${NC}"
+echo ""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./spell
+

@@ -1,0 +1,76 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（2层绝对路径雷达精准校准，0%出错率）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 🔮 🎬 第一幕：奥术虚空时空崩坏粒子带（单引号保护，100% 绝对垂直对称） =====================
+echo -e "${PURPLE}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo '  *****    ***   *             FRAGMENTED ODD CHAMBER          *   ***    *****  '
+echo '   ***      *                                                       *      ***   '
+echo -e "${NC}"
+
+echo "You have entered a deeply strange, asymmetric mystical room."
+echo "Haphazard patterns of shattered matter reflect your glowing gaze."
+echo ""
+echo -e "${PURPLE}----------------------------------------------------------------------${NC}"
+echo ""
+# 🌟 故事分屏交互锚点 1
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO STEP ONTO THE SHATTERED FLOOR...${NC}"
+read -s -r
+
+# ===================== 💎 🎬 第二幕：监视玻璃！3D 冰蓝立体折射玻璃碎片阵列具现 =====================
+clear
+echo "As you move past the cold stone floor, the shards of glass appear to turn slightly..."
+echo -e "They twist in unison, ${RED}as if watching your every single move${NC} as you go."
+echo "------------------------------------------------------------"
+
+echo -e "${CYAN}"
+echo '                 /\       __      /\          __         '
+echo '                /  \     /_ \    /  \        /_ \        '
+echo '                \  /     \  /    \  /        \  /        '
+echo '                 \/       \/      \/          \/         '
+echo '             __       /\       __        /\              '
+echo '            /_ \     /  \     /_ \      /  \             '
+echo '            \  /     \  /     \  /      \  /             '
+echo '             \/       \/       \/        \/              '
+echo -e "${NC}"
+
+# 🌟 故事分屏交互锚点 2
+echo -e -n " 👉 ${CYAN}PRESS [ENTER] TO PEER AT THE SACRED WALL INSCRIBED IN FRONT...${NC}"
+read -s -r
+# ===================== 🏆 🎬 第三幕：明暗神迹！至尊 3D 黄金双圣杯（完美对齐，彻底清除连环截断） =====================
+clear
+echo "On the ancient stone wall is a faded picture of two massive goblets:"
+echo ""
+
+# 🌟 核心重绘：黄金色与神秘紫色并排对撞，两边空格精准对冲，右侧线条 100% 绝对死齐！
+echo -e "      ${YELLOW} ✧  ✨  ✧                  ${PURPLE} ░  🔮  ░${NC}"
+echo -e "      ${YELLOW} .-------.                 ${PURPLE} .-------.${NC}"
+echo -e "      ${YELLOW} |       |                 ${PURPLE} |///////|${NC}"
+echo -e "      ${YELLOW}  \\     /                  ${PURPLE}  \\     /${NC}"
+echo -e "      ${YELLOW}   \\   /                   ${PURPLE}   \\   /${NC}"
+echo -e "      ${YELLOW}    '|'                    ${PURPLE}    '|'${NC}"
+echo -e "      ${YELLOW}     |                     ${PURPLE}     |${NC}"
+echo -e "      ${YELLOW}  -------                  ${PURPLE}  -------${NC}"
+echo ""
+echo "------------------------------------------------------------"
+echo -e "One cup ${YELLOW}glows intensely bright${NC} with raw solar mana..."
+echo -e "The other cup ${PURPLE}shines darkly${NC} with a deep, bottomless lunar void."
+echo "============================================================"
+echo ""
+
+# 终章底端粒子闭合线
+echo -e "${PURPLE}"
+echo ' *******  ****  **  *                                         *  **  ****  ******* '
+echo -e "${NC}"
+echo ""

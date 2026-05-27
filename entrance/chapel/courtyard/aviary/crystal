@@ -1,0 +1,47 @@
+#!/bin/bash
+# 1. 自动引入全局艺术库（就地声明颜色铁律，3层绝对路径雷达精准校准）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== ❄️ 冬之女王 3D 棱镜白水晶（单引号神盾保护，绝对垂直中轴线死齐） =====================
+echo -e "${CYAN}"
+echo '                         .             '
+echo '                        / \            '
+echo '                       /   \           '
+echo '                      /  .  \          '
+echo '                     /  / \  \         '
+echo '                    |  |   |  |        '
+echo '                    |  | * |  |        '
+echo '                    |  |   |  |        '
+echo '                     \  \ /  /         '
+echo '                      \  `  /          '
+echo '                       \   /           '
+echo '                        \ /            '
+echo '                         V             '
+echo -e "         ${BLUE}★ THE QUEEN OF WINTER BLADE ★${NC}"
+echo ''
+
+# ===================== 📜 核心剧情说明与变量注入（像素级黄金卷轴，已补齐 EOF 闭合） =====================
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  You find a flawless white ${CYAN}**crystal**${NC}, forged by the *"
+echo '   *  fabled Queen of Winter, resting on the frosty ground.   *'
+echo '   *                                                          *'
+echo '   *  👉 PREFIX THIS ITEM TO YOUR INVENTORY BY TYPING:        *'
+echo -e "   *     ${GREEN}I=crystal,\$I${NC}                                         *"
+echo '   *                                                          *'
+echo '   *  💡 Remember, you can check your inventory at any time:  *'
+echo -e "   *     ${GREEN}echo \$I${NC}                                              *"
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+

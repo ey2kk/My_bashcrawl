@@ -1,0 +1,68 @@
+#!/bin/bash
+# 1. 自动引入 4 层外的全局艺术库（精准雷达）
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../art.sh"
+
+# 🔴 就地附魔声明颜色变量（铁律）
+RED='\033[0;31m'
+GREEN='\033[0;32'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+# ===================== 赛博朋克科技感：发光红色按钮（单引号神盾） =====================
+echo -e "${RED}"
+echo '           .------------------------.'
+echo '           |     [ ELEVATOR ]       |'
+echo '           |   __________________   |'
+echo '           |  /                  \  |'
+echo -e "           |  |     ${YELLOW}   /\\   ${RED}     |  |"
+echo -e "           |  |     ${YELLOW}  /  \\  ${RED}     |  |"
+echo -e "           |  |     ${YELLOW} /____\\ ${RED}     |  |"
+echo -e "           |  |     ${YELLOW}   ||   ${RED}     |  |"
+echo '           |  \__________________/  |'
+echo '           |   * GLOWING BUTTON *   |'
+echo '           \------------------------/'
+echo -e "${NC}"
+
+# ===================== 剧情文本边框 =====================
+echo '    ************************************************************'
+echo '   *                                                          *'
+echo -e "   *  You see a glowing ${RED}RED BUTTON${NC} with what appears to be     *"
+echo -e "   *  an ${YELLOW}arrow pointing UP${NC} deeply inscribed on its face.       *"
+echo '   *  The metal around it hums with ancient hydraulic energy. *'
+echo '   *                                                          *'
+echo '    ************************************************************'
+echo ''
+
+printf "Are you tempted to press the button?  y/n  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    echo "--------------------------------------------------"
+    echo -e "💥 ${GREEN}[CLICK] You press the heavy metallic button...${NC}"
+    echo -e "⚙️ ${CYAN}Hydraulic gears grind in the walls. The doors slide open!${NC}"
+    echo "   Revealing a small, dimly lit elevator chamber."
+    echo "--------------------------------------------------"
+    
+    # 🌟 2. 完美继承原版的黑核电梯后台运作逻辑（带有 & 异步进程）
+    echo "UP" > .elevator/.direction
+    ln -sf .elevator door &> /dev/null && \
+        sleep 10 && \
+        echo -e "\n⚠️ ${RED}[NOTICE] The elevator doors slide closed with a heavy thud.${NC}\n" && \
+        unlink door &
+    echo
+fi
+
+# ===================== 完美的防偷看/防剧透物理遮挡块 =====================
+# 完美复原你提到的中间一长串防剧透井号，将其优雅地闭合为整齐边框
+for i in {1..25}; do echo "#"; done
+
+echo '# ************************************************************'
+echo '# * Remember, when files end in a * it means applications.   *'
+echo '# * Try running this object by typing: ./button              *'
+echo '# * If you do not see the * suffix, remember to use ls -F!   *'
+echo '# ************************************************************'
+#
