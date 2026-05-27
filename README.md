@@ -1,6 +1,6 @@
-# 🎮 My_bashcrawl: Illuminated Arch-Mage Edition
+# 🎮 My_bashcrawl: ASCII-ART Edition
 
-An advanced, high-immersion visual overhaul and educational reinforcement of the classic CLI text-adventure game **Bashcrawl**. 
+This is an advanced, high-immersion visual overhaul and educational reinforcement of the classic CLI text-adventure game **Bashcrawl**. 
 
 ---
 
@@ -8,7 +8,7 @@ An advanced, high-immersion visual overhaul and educational reinforcement of the
 
 This repository is a heavily customized, unsanctioned magical deviation built directly upon the amazing open-source foundation of the original game. **The entire core gameplay loop, text chronicles, secret paths, and underlying command-line educational concepts are 100% based on the brilliant work of the original creators.** We stand firmly on the shoulders of giants.
 
-* **Original Game Project & Authors:** To explore the baseline, pristine dry-text legacy version of the game, or to contribute your own custom dungeon rooms, please visit the official [Bashcrawl GitHub Repository](https://github.com).
+* **Original Game Project & Authors:** To explore the baseline, pristine dry-text legacy version of the game, or to contribute your own custom dungeon rooms, please visit the origin version.(https://gitlab.com/slackermedia/bashcrawl)
 
 ---
 
@@ -16,7 +16,7 @@ This repository is a heavily customized, unsanctioned magical deviation built di
 
 The original *Bashcrawl* is a masterpiece engineered to teach core POSIX (Linux, BSD, UNIX) terminal operations through directory navigation. However, wandering through absolute darkness with raw un-styled text lines occasionally detached modern apprentices from the narrative weight of a true dungeon crawl.
 
-**My Vision:** I meticulously embedded a complete ecosystem of hand-crafted, pixel-aligned **ASCII Art cinematic sequences** into the terminal. Every boss encounter awakening, every holy purification altar, and every long-forgotten archive now manifests with intense character layouts and vibrant ANSI multi-color enchantments. This visual escalation bridges the raw interface of terminal syntax with the immersive tension of a hardcore desktop RPG, vastly elevating the learning experience without altering a single byte of the original puzzle logic.
+**My Vision:** I meticulously embedded a complete ecosystem of **ASCII Art cinematic sequences** into the terminal. Every boss encounter awakening, every holy purification altar, and every long-forgotten scroll now manifests with intense character layouts and vibrant ANSI multi-color enchantments. This visual escalation bridges the raw interface of terminal syntax with the immersive tension of a hardcore desktop RPG, vastly elevating the learning experience without altering a single byte of the original puzzle logic.
 
 ---
 
@@ -26,15 +26,12 @@ This edition introduces critical stability fixes and intelligent educational fil
 
 ### 1. The Interceptor Wall: Code-Leak Prevention (The Law of POSIX)
 * **The Problem:** In the legacy game, players frequently ruined their own immersion or accidentally peeked at game triggers by using `cat` on executable encounter scripts (monsters, interactive mechanics).
-* **The Magic:** This mod introduces an intelligent global **Cat Radar Filter**. If a player attempts to `cat` an active script (e.g., `statue`, `ghost`), the terminal instantly wipes the screen and flashes an authoritative warning explaining the stark educational difference between inspecting text (`cat`) versus physically triggering an application (`./`). It then grants a pardon and smoothly runs the dynamic illusion.
-
+* **The Magic:** This mod introduces an intelligent global **Cat Radar Filter**. If a player attempts to `cat` an active script (e.g., `statue`, `ghost`), the terminal instantly wipes the screen and flashes an authoritative warning explaining the stark educational difference between inspecting text (`cat`) versus physically triggering an application (`./`).
+  
 ### 2. Elimination of the Legacy Stack-Overflow Freeze (Stability Overhaul)
 * **The Bug:** The original final boss fight against `nyarlathotep` suffered from a deep, catastrophic code-recursion architecture error. Consecutive combat loops exponentially multiplied the function call-stack, resulting in an inevitable terminal crash/freeze (Stack Overflow) mid-battle.
 * **The Fix:** I completely eradicated this multi-year legacy bug by modernizing the function convergence logic. The final epic clash now runs at 100% industrial stability.
 
-### 3. Smart Windows-Proof (WSL) Classification Radar
-* **The Innovation:** When running via WSL under Windows mounted storage (`/mnt/c/`), the underlying file system aggressively forces a `777` executable flag onto plain static documents. This historically ruined the teaching value of `ls -F`, as text files like `scrap` erroneously displayed with an executable `*` star. 
-* **The Magic:** I built a dynamic terminal layout re-router. Static files masquerading as scripts have their artificial stars visually vaporized on the fly, accurately preserving the core educational integrity of directory type identification.
 
 ---
 
