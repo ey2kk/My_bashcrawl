@@ -1,6 +1,6 @@
 #!/bin/bash
 # 1. 自动引入全局艺术库（就地声明颜色铁律，杜绝环境丢失）
-source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../art.sh"
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'

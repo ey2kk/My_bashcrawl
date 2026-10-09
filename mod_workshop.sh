@@ -1,75 +1,38 @@
 #!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL: MOD WORKSHOP (开发用逐脚本编辑预览工具)
+# =======================================================
 
-FILES=(
-"./.rift/arena/pit/corpse"
-"./.rift/arena/pit/drum"
-"./.rift/arena/pit/drummer"
-"./.rift/arena/pit/end"
-"./.rift/arena/pit/graduation_log.txt"
-"./.rift/arena/pit/nyarlathotep"
-"./.rift/arena/pit/platinum"
-"./.rift/arena/pit/scroll"
-"./.rift/arena/pit/treasure"
-"./.rift/arena/pit/wizard-light"
-"./.rift/arena/scroll"
-"./.rift/box"
-"./.rift/scroll"
-"./.rift/spire/mezzanine/button"
-"./.rift/spire/mezzanine/window"
-"./.rift/spire/scroll"
-"./cellar/armoury/chamber/pieces"
-"./cellar/armoury/chamber/scroll"
-"./cellar/armoury/chamber/spell"
-"./cellar/armoury/chamber/treasure"
-"./cellar/armoury/goblin"
-"./cellar/armoury/potion"
-"./cellar/armoury/scroll"
-"./cellar/armoury/treasure"
-"./cellar/scroll"
-"./cellar/treasure"
-"./chapel/.bless"
-"./chapel/altar"
-"./chapel/courtyard/aviary/crystal"
-"./chapel/courtyard/aviary/penguin"
-"./chapel/courtyard/aviary/scroll"
-"./chapel/courtyard/fountain"
-"./chapel/courtyard/rags"
-"./chapel/courtyard/scroll"
-"./chapel/scroll"
-"./scrap"
-"./scroll"
-"./test_goblin"
-"./vault/.bless"
-"./vault/glass"
-"./vault/scroll"
-"./vault/stronghold/goblet"
-"./vault/stronghold/nursery/potion"
-"./vault/stronghold/nursery/scroll"
-"./vault/stronghold/nursery/spell"
-"./vault/stronghold/orb1"
-"./vault/stronghold/orb2"
-"./vault/stronghold/orb3"
-"./vault/stronghold/scroll"
-)
+GAME_DIR="$(cd "$(dirname "${BASH_SOURCE}")/entrance" && pwd)"
+cd "$GAME_DIR" || exit 1
 
-ENTRANCE_DIR="$(cd "$(dirname "${BASH_SOURCE}")" && pwd)"
+# 自动收集所有以 #!/bin/bash 开头的游戏脚本（排除全局艺术库自身）
+FILES=()
+while IFS= read -r f; do
+    FILES+=("$f")
+done < <(grep -rl '^#!/bin/bash' . 2>/dev/null | grep -v '^\./art\.sh$' | sort)
 
 for FILE in "${FILES[@]}"; do
-    if [ ! -f "$FILE" ]; then continue; fi
+    [ -z "$FILE" ] && continue
+    REL="${FILE#./}"
+    [ -f "$REL" ] || continue
 
     while true; do
         clear
         echo -e "\033[1;33m====================================================\033[0m"
-        echo -e "\033[1;32mTarget: $FILE\033[0m"
+        echo -e "\033[1;32mTarget: $REL\033[0m"
         echo -e "\033[1;33m====================================================\033[0m"
         echo -e "\033[1;36m[Original Content]:\033[0m"
-        cat "$FILE"
+        cat "$REL"
         echo -e "\033[1;33m----------------------------------------------------\033[0m"
 
-        DEPTH=$(echo "$FILE" | tr -cd '/' | wc -c)
+        DIR_REL="$(dirname "$REL")"
         UP_PATH=""
-        for ((i=1; i<DEPTH; i++)); do UP_PATH="../$UP_PATH"; done
-        
+        if [ "$DIR_REL" != "." ]; then
+            N=$(echo "$DIR_REL" | tr -cd '/' | wc -c)
+            for ((i=0; i<=N; i++)); do UP_PATH="../$UP_PATH"; done
+        fi
+
         echo -e "💡 Code to paste at top:"
         echo -e "\033[1;35msource \"\$(cd \"\$(dirname \"\${BASH_SOURCE}\")\" && pwd)/${UP_PATH}art.sh\"\033[0m"
         echo -e "\033[1;33m----------------------------------------------------\033[0m"
@@ -81,29 +44,22 @@ for FILE in "${FILES[@]}"; do
         read -p "Choose (1/2/3): " CHOICE
 
         if [ "$CHOICE" == "1" ]; then
-            nano "$FILE"
-            chmod +x "$FILE"
-            
+            nano "$REL"
+            chmod +x "$REL"
+
             clear
             echo -e "\033[1;35m[Workshop] Launching Preview (Safe Mode)...\033[0m"
             echo -e "\033[1;33m----------------------------------------------------\033[0m"
-            
-            # 🌟 核心防卡死进化：切换到脚本所在子目录，执行后强行中断进程释放控制权
-            ABS_PATH="${ENTRANCE_DIR}/${FILE#./}"
-            DIR_PATH="$(dirname "$ABS_PATH")"
-            FILE_NAME="$(basename "$ABS_PATH")"
-            
-            (cd "$DIR_PATH" && bash "./$FILE_NAME")
-            
+            (cd "$(dirname "$REL")" && bash "./$(basename "$REL")")
             echo -e "\033[1;33m----------------------------------------------------\033[0m"
             read -p "Satisfied with the preview result? [Y/N]: " PREVIEW_CHOICE
-            
+
             if [[ "$PREVIEW_CHOICE" =~ ^[Yy]$ || -z "$PREVIEW_CHOICE" ]]; then
-                echo -e "\033[1;32m[Locked] -> $FILE\033[0m"
-                break 
+                echo -e "\033[1;32m[Locked] -> $REL\033[0m"
+                break
             fi
         elif [ "$CHOICE" == "2" ]; then
-            break 
+            break
         elif [ "$CHOICE" == "3" ]; then
             exit 0
         else

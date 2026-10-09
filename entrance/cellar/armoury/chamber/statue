@@ -4,7 +4,7 @@
 # ==========================================
 
 # 1. 引入全局艺术库
-source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../../art.sh" 2>/dev/null
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh" 2>/dev/null
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'

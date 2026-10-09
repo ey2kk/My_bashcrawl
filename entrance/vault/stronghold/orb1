@@ -1,6 +1,6 @@
 #!/bin/bash
 # 1. 自动引入全局艺术库（3层绝对路径雷达精准校准，0%出错率）
-source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../art.sh"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'

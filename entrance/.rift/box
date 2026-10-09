@@ -3,7 +3,7 @@
 # 🎮 BASHCRAWL ADVANCED MOD: THE CYBERNETIC BOX (LEGACY-TOUCH)
 # =======================================================
 
-source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../art.sh" 2>/dev/null
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../art.sh" 2>/dev/null
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'

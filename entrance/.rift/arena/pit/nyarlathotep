@@ -69,7 +69,7 @@ gameover () {
     # 完美保留原版的死亡尸体生成机制，并给尸体加上我们之前的安全脚本格式
     cat << EOF > corpse
 #!/bin/bash
-source "\$(cd "\$(dirname "\${BASH_SOURCE}")" && pwd)/../../../../art.sh"
+source "\$(cd "\$(dirname "\${BASH_SOURCE}")" && pwd)/../../../art.sh"
 clear
 echo "     ____      "
 echo "    /    \     "

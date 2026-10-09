@@ -1,6 +1,6 @@
 #!/bin/bash
 # 1. 自动引入 3 层外的全局艺术库（精准雷达）
-source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../../art.sh"
+source "$(cd "$(dirname "${BASH_SOURCE}")" && pwd)/../../art.sh"
 
 # 🔴 就地附魔声明颜色变量（铁律）
 YELLOW='\033[0;33m'

@@ -8,7 +8,7 @@ This is an advanced, high-immersion visual overhaul and educational reinforcemen
 
 This repository is a heavily customized, unsanctioned magical deviation built directly upon the amazing open-source foundation of the original game. **The entire core gameplay loop, text chronicles, secret paths, and underlying command-line educational concepts are 100% based on the brilliant work of the original creators.** We stand firmly on the shoulders of giants.
 
-* **Original Game Project & Authors:** To explore the baseline, pristine dry-text legacy version of the game, or to contribute your own custom dungeon rooms, please visit the origin version.(https://gitlab.com/slackermedia/bashcrawl)
+* **Original Game Project & Authors:** To explore the baseline, pristine dry-text legacy version of the game, or to contribute your own custom dungeon rooms, please visit the [original version](https://gitlab.com/slackermedia/bashcrawl).
 
 ---
 
@@ -53,7 +53,7 @@ To start your mystical journey and unleash the enhanced visual illusions, follow
 3. Drag and drop the `entrance` directory from this folder into your terminal window, then press `RETURN`.
 4. Your very first move is very important. Type this into your terminal to read the scroll:
    ```bash
-   cat scroll
+   ./scroll
    ```
    May the gods save you.
 
