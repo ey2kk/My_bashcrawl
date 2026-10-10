@@ -15,7 +15,7 @@ document below.  The first incantation I tried was thus:
 
     cat alpha beta gamma delta | base64 -d > robot
 
-...but that was met with the following error:  
+...but that was met with the following error:
 
     base64:  invalid input
 
@@ -27,9 +27,9 @@ me the robot is assembled correctly:
     sha256sum -c sha256sums
 
 I will attempt every combination and document the one
-that succeeds. 
+that succeeds.
 
-    alpha beta delta gamma 
+    alpha beta delta gamma
     alpha delta bet
 
 There appears to be dried blood on the notebook, and the
