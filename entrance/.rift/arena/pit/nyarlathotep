@@ -135,15 +135,69 @@ fi
 EOF
         chmod +x platinum
 
-        cat << EOF > end
+        cat << 'EOF' > end
 #!/bin/bash
+# =======================================================
+# 🎮 BASHCRAWL: 最终胜利结算画面（ASCII-ART 大结局）
+# =======================================================
+
+GOLD='\033[1;33m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+NC='\033[0m'
+
 clear
-echo "=================================================="
-echo "🎉 CONGRATULATIONS! You have completed Bashcrawl! 🎉"
-echo "=================================================="
-echo "You now know enough Bash to use it for everyday activities."
-echo "Practice makes perfect, so be sure to use it often."
-echo "=================================================="
+
+echo -e "${GOLD}"
+echo '        ___________'
+echo "       '._==_==_=_.'"
+echo '       .-\:      /-.'
+echo '      | (|:.     |) |'
+echo "       '-|:.     |-'"
+echo '         \::.    /'
+echo "          '::. .'"
+echo '            ) ('
+echo "          _.' '._"
+echo '         `"""""""`'
+echo -e "${NC}"
+echo ''
+
+echo -e "${GOLD}"
+echo '  __     _____ ____ _____ ___  ______   __'
+echo '  \ \   / /_ _/ ___|_   _/ _ \|  _ \ \ / /'
+echo '   \ \ / / | | |     | || | | | |_) \ V / '
+echo '    \ V /  | | |___  | || |_| |  _ < | |  '
+echo '     \_/  |___\____| |_| \___/|_| \_\|_|  '
+echo -e "${NC}"
+echo ''
+
+echo -e "${WHITE}   CONGRATULATIONS! You have completed Bashcrawl!${NC}"
+echo ''
+echo -e "${CYAN}   You now know enough Bash to use it for everyday activities.${NC}"
+echo -e "${CYAN}   Practice makes perfect, so be sure to use it often.${NC}"
+echo ''
+echo -e "${GOLD} ================================================================ ${NC}"
+echo ''
+echo -e "${WHITE}                       YOUR MAGICKAL ARSENAL${NC}"
+echo ''
+echo -e "   ${GREEN}ls${NC}              ${WHITE}see in the dark${NC}"
+echo -e "   ${GREEN}cd <dir>${NC}         ${WHITE}move between rooms${NC}"
+echo -e "   ${GREEN}cat file${NC}         ${WHITE}read a scroll${NC}"
+echo -e "   ${GREEN}./script${NC}         ${WHITE}trigger an encounter${NC}"
+echo -e "   ${GREEN}ls -F${NC}            ${WHITE}tell doors (*) from items${NC}"
+echo -e "   ${GREEN}alias${NC}            ${WHITE}cast ls -F with one word${NC}"
+echo -e "   ${GREEN}echo \$I${NC}          ${WHITE}check your inventory${NC}"
+echo -e "   ${GREEN}export HP=15${NC}      ${WHITE}set your health points${NC}"
+echo -e "   ${GREEN}chmod +x${NC}          ${WHITE}bring a script to life${NC}"
+echo -e "   ${GREEN}ln -s${NC}             ${WHITE}open a hidden portal${NC}"
+echo -e "   ${GREEN}base64 -d${NC}         ${WHITE}reassemble the robot${NC}"
+echo -e "   ${GREEN}sha256sum -c${NC}      ${WHITE}verify an artifact${NC}"
+echo ''
+echo -e "${GOLD} ================================================================ ${NC}"
+echo ''
+echo -e "${WHITE}   You are now a true line-wizard. Go forth and conquer!${NC}"
+echo ''
 EOF
         chmod +x end
     else
