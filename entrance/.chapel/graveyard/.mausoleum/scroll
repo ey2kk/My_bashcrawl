@@ -1,3 +1,23 @@
+#!/bin/bash
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+clear
+
+echo -e "${PURPLE}"
+cat << 'ART'
+          .---------------------.
+         /  .-----------------.  \
+        |  |   MAUSOLEUM      |  |
+        |  |    .-----.       |  |
+        |  |   |  RIP  |      |  |
+        |  |    `-----'       |  |
+        |  `-----------------'  |
+         \_____________________/
+ART
+echo -e "${NC}"
+echo ''
+cat << 'EOF'
 # Inside the decayed mausoleum, you catch glimpses of
 # tarnished silver urns, rusted candlesticks, and ornate chests
 # scattered among the debris. The grand chamber is filled with
@@ -12,4 +32,6 @@
 #
 # Once you have found the number of the correct item, pick it up
 # by running the "loot" script.
-
+EOF
+echo -e "${NC}"
+exit 0

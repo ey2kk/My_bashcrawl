@@ -13,6 +13,26 @@
 # We're happy to provide hints.
 #
 
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+clear
+
+echo -e "${PURPLE}"
+cat << 'ART'
+      _________________
+     /   COLUMBARIUM    \
+    |  .----------------. |
+    |  |  niche  niche  | |
+    |  |  ( . )  ( . ) | |
+    |  |   ashes  ashes | |
+    |  `----------------' |
+     \__________________/
+ART
+echo -e "${NC}"
+echo ''
+
+
 if [ -e 15 ]; then
     cat << EOF
 You open the niche, revealing a hidden plaque with a number etched 

@@ -18,6 +18,21 @@ FUNCTIONS=$(pwd)
 FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
 . $FUNCTIONS
 
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
+clear
+
+echo -e "${YELLOW}"
+cat << 'ART'
+       ___________
+      /\____;;___\
+     /  /  /  /   |
+    |  |  |  |    |
+     \_|__|__|___/
+ART
+echo -e "${NC}"
+echo ''
 cat << EOF
 As your hand hovers over the array of chests, you feel an eerie
 pull toward one in particular.

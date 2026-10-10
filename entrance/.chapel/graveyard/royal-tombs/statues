@@ -20,6 +20,24 @@ FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
 
 # this runs after the statue has been "destroyed"
 # and this file has been renamed to 'pieces'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+echo -e "${CYAN}"
+cat << 'ART'
+       ___         ___
+      |   |       |   |
+      | RO|       |ALS|
+      |___|       |___|
+       | |         | |
+      _| |_       _| |_
+ART
+echo -e "${NC}"
+echo ''
+
+
 if [ "$0" = "./king" ]; then
     cat << EOF
 You have already unveiled the secret number.

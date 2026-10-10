@@ -1,3 +1,22 @@
+#!/bin/bash
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+clear
+
+echo -e "${CYAN}"
+cat << 'ART'
+       .---------------------.
+      /  ___________________  \
+     |  | o | o | o | o | o | |
+     |  |___|___|___|___|___| |
+     |  | o | o | o | o | o | |
+     |  |___|___|___|___|___| |
+      \_______________________/
+ART
+echo -e "${NC}"
+echo ''
+cat << 'EOF'
 # Before you is the columbarium, a weathered stone structure
 # adorned with carvings of angels and vines. Rows of niches
 # line its walls, some with long burnt-out candles, others
@@ -16,4 +35,6 @@
 #
 # If you know a spell that helps you search, you can make it easier
 # for yourself.
-
+EOF
+echo -e "${NC}"
+exit 0

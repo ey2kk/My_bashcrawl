@@ -1,3 +1,19 @@
+#!/bin/bash
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+clear
+
+echo -e "${GREEN}"
+cat << 'ART'
+          .-.          .-.          .-.
+        .-'   `-.    .-'   `-.    .-'   `-.
+       |  R.I.P.  |  |  R.I.P.  |  |  R.I.P.  |
+        `-.___.-'    `-.___.-'    `-.___.-'
+ART
+echo -e "${NC}"
+echo ''
+cat << 'EOF'
 # In the lower quadrant of the graveyard, the land dips slightly,
 # and fog clings to the uneven ground. The gravestones here are
 # modest and small, many leaning with age, with inscriptions
@@ -17,4 +33,6 @@
 # note of the year of death. Add the year to your Inventory:
 #
 # export I=<year of death>,$I
-
+EOF
+echo -e "${NC}"
+exit 0

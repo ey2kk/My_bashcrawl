@@ -1,3 +1,21 @@
+#!/bin/bash
+GOLD='\033[1;33m'
+NC='\033[0m'
+
+clear
+
+echo -e "${GOLD}"
+cat << 'ART'
+        .-----------------------------.
+       |      ROYAL TOMBS              |
+       |   _____      _____      _____ |
+       |  /_____\    /_____\    /_____\|
+       |    |_|        |_|        |_|  |
+        `-----------------------------'
+ART
+echo -e "${NC}"
+echo ''
+cat << 'EOF'
 # As you enter the plot of royal graves, a sense of faded grandeur
 # fills the air. The once imposing gravestones, crafted from marble
 # and adorned with royal crests, now show signs of neglect, their
@@ -10,5 +28,6 @@
 # guardians, are more forlorn than proud. It is quiet here, save for
 # an occasional rustle of dry leaves and the distant call of a crow 
 # echoing through the stillness.
-
-
+EOF
+echo -e "${NC}"
+exit 0

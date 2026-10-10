@@ -24,7 +24,11 @@ The original *Bashcrawl* is a masterpiece engineered to teach core POSIX (Linux,
 
 This edition introduces critical stability fixes and intelligent educational filters to streamline your mystical journey:
 
-### 1. Elimination of the Legacy Stack-Overflow Freeze (Stability Overhaul)
+### 1. The Interceptor Wall: Code-Leak Prevention (The Law of POSIX)
+* **The Problem:** In the legacy game, players frequently ruined their own immersion or accidentally peeked at game triggers by using `cat` on executable encounter scripts (monsters, interactive mechanics).
+* **The Magic:** This mod introduces an intelligent global **Cat Radar Filter**. If a player attempts to `cat` an active script (e.g., `statue`, `ghost`), the terminal instantly wipes the screen and flashes an authoritative warning explaining the stark educational difference between inspecting text (`cat`) versus physically triggering an application (`./`).
+
+### 2. Elimination of the Legacy Stack-Overflow Freeze (Stability Overhaul)
 * **The Bug:** The original final boss fight against `nyarlathotep` suffered from a deep, catastrophic code-recursion architecture error. Consecutive combat loops exponentially multiplied the function call-stack, resulting in an inevitable terminal crash/freeze (Stack Overflow) mid-battle.
 * **The Fix:** I completely eradicated this multi-year legacy bug by modernizing the function convergence logic. The final epic clash now runs at 100% industrial stability.
 
@@ -49,7 +53,7 @@ To start your mystical journey and unleash the enhanced visual illusions, follow
 3. Drag and drop the `entrance` directory from this folder into your terminal window, then press `RETURN`.
 4. Your very first move is very important. Type this into your terminal to read the scroll:
    ```bash
-   cat scroll
+   ./scroll
    ```
    May the gods save you.
 

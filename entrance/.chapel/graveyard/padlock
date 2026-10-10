@@ -13,6 +13,24 @@
 # We're happy to provide hints.
 #
 
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+clear
+
+echo -e "${GREEN}"
+cat << 'ART'
+        .-----------.
+       /  RUSTED     \
+      |   PADLOCK    |
+      |   .-----.__  |
+      |   | ( O ) |  |
+      |   `-----'  | |
+       \  shackle /  |
+        `--------'---'
+ART
+echo -e "${NC}"
+echo ''
 cat << EOF
 The old padlock features three dials, each adorned with a distinct
 symbol:

@@ -1,3 +1,20 @@
+#!/bin/bash
+GRAY='\033[1;37m'
+NC='\033[0m'
+
+clear
+
+echo -e "${GRAY}"
+cat << 'ART'
+      ____  _   _ ____  ____  _____    _    ____  _____ ____   __
+     / ___|| | | |  _ \|  _ \| ____|  / \  |  _ \| ____|  _ \ / /
+    | |  _ | | | | |_) | | | |  _|   / _ \ | |_) |  _| | | | | |
+    | |_| || |_| |  __/| |_| | |___ / ___ \|  _ <| |___| |_| | |
+     \____| \___/|_|   |____/|_____/_/   \_\_| \_\_____|____/  \_\
+ART
+echo -e "${NC}"
+echo ''
+cat << 'EOF'
 # The graveyard is a haunting place, shrouded in mist and silence.
 #
 # Rusted iron gates creak in the cold wind, leading to a field of
@@ -11,4 +28,6 @@
 #
 # A dark and crumbling mausoleum stands ominously in the
 # centre, its door secured with an old rusty padlock.
-
+EOF
+echo -e "${NC}"
+exit 0
